@@ -1,16 +1,35 @@
 \section{Overall Descriptions}
-\subsection{Product Users}
 
-%\endsubsection   
-\subsection{Technological Constraints}
-
-%\endsubsection   
-\subsection{Assumptions and Additional Specifications}
-
-%\endsubsection   
-\subsubsection{Assumptions}
-
-%\endsubsection   
-\subsubsection{Additional Specifications}
-
-%\endsubsection   
+\subsection{Product Persepective}
+	\subsubsection{System Interfaces}
+		
+	\subsubsection{User Interfaces}
+		A home page, where you can instantly book a taxi, login and sign up. Upon logging in, according to the user type, 
+		you can access user-specific functionalities, listed in section 3.
+	\subsubsection{Hardware Interfaces}
+		A device with internet connectivity is required, as well as some input measure to insert user data and other information. A gps is optional
+		but not mandatory, since it can communicate a user's position in order to simplify booking. This can be aided with the use of other localization
+		services such as geolocalization via cell line and wifi.
+	\subsubsection{Software Interfaces}
+		A soft keyboard can be used instead of a hardware one for input purposes. A web browser is required if the application is not available/installed
+		on the device trying to make use of the service.
+	\subsubsection{Communication Interfaces}
+		An internet connection is required for all types of users of the application. 
+	\subsubsection{Memory Interfaces}
+		150MB of storage space for the application + cache when using the app.
+	
+%\endsubsection
+\subsection{Product Functions}
+	\subsubsection{User Characteristics}
+		The user shall %TODO verify laws regarding taxis in Milan - age etc
+	\subsubsection{Constraints}
+		\begin{itemize}
+			\item Since the application is being commissioned by the government, there should be no legal problems with the usage of the app in regards
+			to competitive laws.
+			\item Gps may not be available on all devices, therefore manual address insertion may be necessary/mandatory in some cases.
+			\item The application may not be used without internet access. This includes viewing logs, which are only stored server-side.
+			\item Due to privacy regulations, the identity of drivers and passengers will be protected even within system logs.
+		\end{itemize}
+	\subsubsection{Assumptions}	
+	
+%\endsubsection 
