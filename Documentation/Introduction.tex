@@ -1,0 +1,48 @@
+\section{Introduction}
+
+\subsection{Purpose}
+	This RASD is a specification document intended to outline the measures being taken to implement "myTaxiService", a service which will be used
+	by taxis in the city of X in order to facilitate taxi usage for drivers and customers. These specifications are for the government of X, the
+	future provider of this service.
+%\endsubsection   
+\subsection{Scope}
+	\subsubsection{Software}
+		This service will require the development of the following:
+		\begin{description}
+			\item[Client-Side]
+				\begin{itemize}
+					\item A mobile application for customers
+					\item A web interface for customers and drivers to access the service
+					\item A mobile application for taxi drivers to interact with calls.
+				\end{itemize}
+			\item[Server-Side]
+				\begin{itemize}
+					\item A server application that handles live queues
+					\item A database that stores user data, including credentials
+					\item Another database that handles REGISTERED user rides, memorizing both booked rides and past itineraries
+				\end{itemize}
+		\end{description}
+		The application should distinguish between regular users and drivers, and should automatically queue booked rides.
+	%\endsubsubsection
+	\subsubsection{Applications}
+		This service is intended to simplify the process of acquring a taxi in X. It should remove the need of a human operator
+	%\endsubsubsection
+%\endsubsection   
+\subsection{Definitions}
+	\begin{description}
+		\item[User]
+			A guest to the service, namely someone who may be a driver or a registered user but has not been authenticated.
+		\item[Registered User]
+			A user of the service who has gone through the registration process, whose information is stored within the service's database.
+		\item[Driver]
+			A user of the service that provides their taxi for the service. They are registered in a manner different from that of other users.
+	\end{description}
+%\endsubsection
+\subsection{Overview}
+	This document is followed by a few more sections.
+	The next section describes the service's structure, how the service operates, what each type of user can do and the way the
+	back-end infrastructure operates. \\
+	The following one analyses what is going to be required to make the actual application work.
+	The final sections are composed of diagrams that represent use cases and the way basic functions should operate.
+%\endsubsection
+
