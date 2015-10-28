@@ -31,19 +31,22 @@ These are the detailed descriptions of the Use Cases listed and shown before
 \begin{Huge} da sistemare 
 \end{Huge}
 
-"Log in" case:
 
-\begin{tabular}{|l|l|} 
+\newpage
+"Log in" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
 \hline
 Name & Log in\\
 \hline
 Actor & Guest\\
 \hline
-Entry conditions & A Guest is an actor who isn't logged yet, so there are not entry conditions\\
+Entry conditions & None\\
 \hline
 Flow of events
 			&	\tabitem The guest enters the website\\
-			&	\tabitem The guest fills the text field requested \(email and password\)\\
+			&	\tabitem The guest fills the text field requested $($email and password$)$\\
 			&	\tabitem The guest clicks on LOG IN button\\
 \hline
 Exit conditions & The system shows the home page personalized with the user credential\\
@@ -53,15 +56,18 @@ Exceptions & The guest inserts the wrong email/password combination or the email
 \end {tabular}
 %or use tabularx package
 
-"Sign up" case:
 
-\begin{tabular}{|l|l|} 
+\newpage
+"Sign up" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
 \hline
 Name & Sign up\\
 \hline
 Actor & Guest\\
 \hline
-Entry conditions & A Guest is an actor who isn't logged yet, so there are not entry conditions\\
+Entry conditions & None\\
 \hline
 Flow of events
 			&	\tabitem The guest enters the website\\
@@ -74,4 +80,245 @@ Exceptions & The guest inserts the wrong email/password combination or the email
 \hline
 \end {tabular}
 
+
+\newpage
+"Edit user's data" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Edit user's data\\
+\hline
+Actor & User and Taxi driver\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on EDIT USER DATA button\\
+			&	\tabitem The system shows the list of data that the User filled when he signed up\\
+			&	\tabitem The User modifies the data\\
+			&	\tabitem The User clicks on SAVE button\\
+			&	\tabitem The system shows the modified data list\\
+			&	\tabitem The User click on OK button\\
+\hline
+Exit conditions & The system shows the home page personalized with the user credential\\
+\hline
+Exceptions & The guest inserts wrong new data or doesn't fill all the required fields\\
+\hline
+\end {tabular}
+
+
+\newpage
+"Instant ride" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Instant ride\\
+\hline
+Actor & Guest and User\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on CALL A TAXI button\\
+			&	\tabitem The system shows the page used to call a taxi\\
+			&	\tabitem The User chooses if insert an address or use his own position $($via GPS$)$\\
+			&	\tabitem The User clicks on OK button\\
+\hline
+Exit conditions & The system shows a confirm message\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+
+\newpage
+"Booking ride" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Booking ride\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on BOOK A RIDE button\\
+			&	\tabitem The system shows a page with the field that the User has to fill:\\
+			&	\tabtratt Origin position $($can be usd the GPS$)$\\
+			&	\tabtratt Destination\\
+			&	\tabtratt Departuring Time\\
+			&	and an option to enable the Taxi Sharing\\
+			&	\tabitem The User fills the fields and clicks OK button\\
+\hline
+Exit conditions & The system shows the confirm page with the data inserted by the User\\
+\hline
+Exceptions & The guest inserts wrong new data like an impossible hour\\
+\hline
+\end {tabular}
+
+
+\newpage
+"Edit Booking" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Edit Booking\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & The User must have booked at least one ride\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on MY BOOKINGS button\\
+			&	\tabitem The system shows a page with all the User's bookings\\
+			&	\tabitem The User chooses a booking and clicks on MODIFY button\\
+			&	\tabitem The System shows the page of the booking with the field filled when it was created\\
+			&	\tabitem The User modifies the data and clicks on SAVE button\\
+			
+\hline
+Exit conditions & The system shows the confirm page with the new data of the booking and updates its booking list\\
+\hline
+Exceptions & The User inserts wrong data like an hour to close to that moment\\
+\hline
+\end {tabular}
+
+\newpage
+"Cancel Booking" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Cancel Booking\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & The User must have booked at least one ride\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on MY BOOKINGS button\\
+			&	\tabitem The system shows a page with all the User's bookings\\
+			&	\tabitem The User chooses a booking and clicks on CANCEL button\\
+			&	\tabitem The System shows a page that ask the user to confirm the cancel \askpippo\\
+			&	\tabitem The User clicks the OK button\\	
+\hline
+Exit conditions & The system shows the confirm page and updates its booking list\\
+\hline
+Exceptions & The User tries to cancel a booking that has a departure hour that is less than 10 minutes after that moment\\
+\hline
+\end {tabular}
+
+\newpage
+"View status and accept sharing" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & View status and accept sharing\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & The User must have booked at least one ride with the sharing option\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on MY BOOKINGS button\\
+			&	\tabitem The system shows a page with all the User's bookings\\
+			&	\tabitem The User chooses a shared ride and clicks on STATUS button\\
+			&	\tabitem The system shows a page with the sharing situation\\
+			&	\tabitem The User can accept or refuse a adviced sharing clicking on ACCEPT or REFUSE buttons\\
+	
+\hline
+Exit conditions & The system shows again the User's booking page\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+\newpage
+"View past bookings" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & View past bookings\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & The User must have booked at taken at least one ride\\
+\hline
+Flow of events
+			&	\tabitem The User clicks on MY BOOKINGS button\\
+			&	\tabitem The system shows a page with all the User's bookings $($if there are any$)$\\
+			&	\tabitem The User clicks on PAST BOOKINGS button\\
+			&	\tabitem The system shows a page with the User's past booking\\
+			&	\tabitem The User can see the details of a particular booking clicking on the DETAILS button\\
+	
+\hline
+Exit conditions & The system shows again the User's booking page\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+\newpage
+"Set Working Condition" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Set Working Condition\\
+\hline
+Actor & Taxi Driver\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events
+			&	\tabitem The Driver clicks on MODIFY WORKING STATE button\\
+			&	\tabitem The system shows a page with the current working state and, if the state is on "working", the amount of time the Driver has been working\\
+			&	\tabitem The Driver clicks on SET WORKING or SET NOT WORKING button to set his situation\\
+			&	\tabitem The system shows the working state page updated\\
+
+	
+\hline
+Exit conditions & The system updates the Driver's condition\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+
+\newpage
+
+\finishthis
+"Accept or refuse a job" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Accept or refuse a job\\
+\hline
+Actor & Taxi Driver\\
+\hline
+Entry conditions & The Driver has to be notificated with at least one adviced ride and mustn't have accepted a ride yet \askpippo\\
+\hline
+Flow of events
+			&	\tabitem The Driver clicks on RIDES button\\
+			&	\tabitem The system shows a page with all the possibile rides\\
+			&	\tabitem The Driver chooses a ride and clicks on ACCEPT or REFUSE button\\
+			&	\tabitem The system shows a page with the User's past booking $($if there are any$)$\\
+			&	\tabitem The User can see the details of a particular booking clicking on the DETAILS button\\
+	
+\hline
+Exit conditions & The system shows again the User's booking page\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+
 %\endsubsection
+
