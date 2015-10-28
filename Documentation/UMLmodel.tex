@@ -33,31 +33,6 @@ These are the detailed descriptions of the Use Cases listed and shown before
 
 
 \newpage
-"Log in" case:
-\\
-\\
-\begin{tabular}{|l|p{10cm}|} 
-\hline
-Name & Log in\\
-\hline
-Actor & Guest\\
-\hline
-Entry conditions & None\\
-\hline
-Flow of events
-			&	\tabitem The guest enters the website\\
-			&	\tabitem The guest fills the text field requested $($email and password$)$\\
-			&	\tabitem The guest clicks on LOG IN button\\
-\hline
-Exit conditions & The system shows the home page personalized with the user credential\\
-\hline
-Exceptions & The guest inserts the wrong email/password combination or the email is not registered in the system\\
-\hline
-\end {tabular}
-%or use tabularx package
-
-
-\newpage
 "Sign up" case:
 \\
 \\
@@ -73,6 +48,39 @@ Flow of events
 			&	\tabitem The guest enters the website\\
 			&	\tabitem The guest clicks the SIGN UP button\\
 			&	\tabitem The guest fills the following fields:\\
+			&	\tabtratt Account type $($User or Taxi Driver$)$\\
+			&	\tabtratt Name\\
+			&	\tabtratt Surname\\
+			&	\tabtratt E-mail\\
+			&	\tabtratt Password\\
+			&	\tabtratt Payament system $($optional, only for Users$)$\\
+			&	\tabtratt Taxi Code $($only for Taxi Drivers$)$\\
+			&	\tabitem The Guest clicks on CONFIRM button\\
+\hline
+Exit conditions & The system shows the home page personalized with the user credential and updates its database. If the Guests signs up as a taxi driver, matches his profile with the taxi code in the database\\
+\hline
+Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system or the taxi code is already assigned or doens't exist in the database\\
+\hline
+\end {tabular}
+
+
+
+\newpage
+"Log in" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Log in\\
+\hline
+Actor & Guest\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events
+			&	\tabitem The guest enters the website\\
+			&	\tabitem The guest fills the text field requested $($email and password$)$\\
+			&	\tabitem The guest clicks on LOG IN button\\
 \hline
 Exit conditions & The system shows the home page personalized with the user credential\\
 \hline
@@ -126,7 +134,7 @@ Flow of events
 			&	\tabitem The User chooses if insert an address or use his own position $($via GPS$)$\\
 			&	\tabitem The User clicks on OK button\\
 \hline
-Exit conditions & The system shows a confirm message\\
+Exit conditions & The system shows a confirmation message\\
 \hline
 Exceptions & None\\
 \hline
@@ -154,7 +162,7 @@ Flow of events
 			&	and an option to enable the Taxi Sharing\\
 			&	\tabitem The User fills the fields and clicks OK button\\
 \hline
-Exit conditions & The system shows the confirm page with the data inserted by the User\\
+Exit conditions & The system shows the confirmation page with the data inserted by the User and updares its booking list\\
 \hline
 Exceptions & The guest inserts wrong new data like an impossible hour\\
 \hline
@@ -181,7 +189,7 @@ Flow of events
 			&	\tabitem The User modifies the data and clicks on SAVE button\\
 			
 \hline
-Exit conditions & The system shows the confirm page with the new data of the booking and updates its booking list\\
+Exit conditions & The system shows the confirmation page with the new data of the booking and updates its booking list\\
 \hline
 Exceptions & The User inserts wrong data like an hour to close to that moment\\
 \hline
@@ -206,7 +214,7 @@ Flow of events
 			&	\tabitem The System shows a page that ask the user to confirm the cancel \askpippo\\
 			&	\tabitem The User clicks the OK button\\	
 \hline
-Exit conditions & The system shows the confirm page and updates its booking list\\
+Exit conditions & The system shows the confirmation page and updates its booking list\\
 \hline
 Exceptions & The User tries to cancel a booking that has a departure hour that is less than 10 minutes after that moment\\
 \hline
@@ -293,7 +301,6 @@ Exceptions & None\\
 
 \newpage
 
-\finishthis
 "Accept or refuse a job" case:
 \\
 \\
@@ -303,21 +310,71 @@ Name & Accept or refuse a job\\
 \hline
 Actor & Taxi Driver\\
 \hline
-Entry conditions & The Driver has to be notificated with at least one adviced ride and mustn't have accepted a ride yet \askpippo\\
+Entry conditions & The Driver must have been notificated of the presence of a possibile ride \askpippo\\
 \hline
 Flow of events
-			&	\tabitem The Driver clicks on RIDES button\\
-			&	\tabitem The system shows a page with all the possibile rides\\
-			&	\tabitem The Driver chooses a ride and clicks on ACCEPT or REFUSE button\\
-			&	\tabitem The system shows a page with the User's past booking $($if there are any$)$\\
-			&	\tabitem The User can see the details of a particular booking clicking on the DETAILS button\\
+			&	\tabitem The Driver opens the notification\\
+			&	\tabitem The system shows a page the data of the ride\\
+			&	\tabitem The Driver clicks on ACCEPT or REFUSE button\\
+			&	\tabitem The system shows a confirmation page\\
 	
 \hline
-Exit conditions & The system shows again the User's booking page\\
+Exit conditions & The system either notifies the asker and removes the Driver from the queue if he accepted, or moves the Driver to the bottom of the queue if he refused\\
 \hline
 Exceptions & None\\
 \hline
 \end {tabular}
+
+
+\newpage
+
+"Notify the end of a ride" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Notify the end of a ride\\
+\hline
+Actor & Taxi Driver\\
+\hline
+Entry conditions & The Driver must have already accepted a ride\\
+\hline
+Flow of events
+			&	\tabitem The Driver clicks on the RIDE COMPLETED button in his homepage\\
+			&	\tabitem The system shows a page to ask for confirmation\\
+			&	\tabitem The Driver clicks on the OK or CANCEL button to confirm or not\\
+			&	\tabitem The system shows the homepage again\\
+	
+\hline
+Exit conditions & The system add the Driver to the queue\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+\newpage
+
+"Log Out" case:
+\\
+\\
+\begin{tabular}{|l|p{10cm}|} 
+\hline
+Name & Log Out\\
+\hline
+Actor & User and Taxi Driver\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events
+			&	\tabitem The user clicks on LOG OUT button\\
+			&	\tabitem The system shows the Guest's homepage\\	
+\hline
+Exit conditions & None\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
 
 
 %\endsubsection
