@@ -16,8 +16,8 @@ These are the use cases which are part of the service
 	\item Notify end of a ride
 	\item Accept or refuse a job
 	\item Logout
-	
-	
+
+
 \end{itemize}
 
 %-------------------------------------------------------
@@ -27,7 +27,7 @@ These are the use cases which are part of the service
 %\endsubsection
 \subsection{Use Case Description}
 These are the detailed descriptions of the Use Cases listed and shown before
-\begin{Huge} da sistemare 
+\begin{Huge} da sistemare
 \end{Huge}
 
 
@@ -35,7 +35,7 @@ These are the detailed descriptions of the Use Cases listed and shown before
 "Sign up" case:
 \\
 \\
-\begin{tabular}{|p{3cm}|p{10cm}|} 
+\begin {tabular} {|p{3cm}|p{10cm}|}
 \hline
 Name & Sign up\\
 \hline
@@ -43,36 +43,71 @@ Actor & Guest\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events & 
-	\begin{itemize}
+Flow of events &
+	\begin {itemize}
 		\item The guest enters the website
 		\item The guest clicks the SIGN UP button
 		\item The guest fills the following fields:
-		\begin{itemize}
-			\item Account type $($User or Taxi Driver$)$
+		\begin {itemize}
 			\item Name
 			\item Surname
 			\item E-mail
+			\item Date of birth
 			\item Password
-			\item Payament system $($optional, only for Users$)$
-			\item Taxi Code $($only for Taxi Drivers$)$
-		\end{itemize}
+			\item Payament system $($optional$)$
+		\end {itemize}
 		\item The Guest clicks on CONFIRM button
-	\end{itemize}\\
+	\end {itemize}\\
 \hline
-Exit conditions & The system shows the home page personalized with the user credential and updates its database. If the Guests signs up as a taxi driver, matches his profile with the taxi code in the database\\
+Exit conditions & The system shows the home page personalized with the user credential and updates its database.\\
 \hline
-Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system or the taxi code is already assigned or doens't exist in the database\\
+Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system or some fields are empthy.\\
 \hline
 \end {tabular}
 
+\newpage
+"Taxi driver sign up" case:
+\\
+\\
+\begin {tabular} {|p{3cm}|p{10cm}|}
+\hline
+Name & Taxi drver sign up\\
+\hline
+Actor & Guest\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events &
+	\begin {itemize}
+		\item The guest enters the website
+		\item The guest clicks the taxi drver signup button in the bottom of the page
+		\item The guest fills the following fields:
+		\begin {itemize}
+			\item Name
+			\item Surname
+			\item E-mail
+			\item Date of birth
+			\item Password
+			\item Driver license
+			\item Car targa \askpippo
+			\item Taxi license
+		\end {itemize}
+		\item The Guest clicks on CONFIRM button
+	\end {itemize}\\
+\hline
+Exit conditions & The system shows the home page personalized with the user credential and updates its database.\\
+\hline
+Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system, does not matches his profile with the taxi
+code in the database or some fields are empthy.\\
+\hline
+\end {tabular}
 
 
 \newpage
 "Log in" case:
 \\
 \\
-\begin{tabular}{|p{3cm}|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Log in\\
 \hline
@@ -97,7 +132,7 @@ Exceptions & The guest inserts the wrong email/password combination or the email
 "Edit user's data" case:
 \\
 \\
-\begin{tabular}{|p{3cm}|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Edit user's data\\
 \hline
@@ -105,7 +140,7 @@ Actor & User and Taxi driver\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events & 
+Flow of events &
 	\begin{itemize}
 		\item The User clicks on EDIT USER DATA button
 		\item The system shows the list of data that the User filled when he signed up
@@ -126,7 +161,7 @@ Exceptions & The guest inserts wrong new data or doesn't fill all the required f
 "Instant ride" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Instant ride\\
 \hline
@@ -136,7 +171,7 @@ Entry conditions & None\\
 \hline
 Flow of events &
 	\begin{itemize}
-		\item The User clicks on CALL A TAXI button
+		\item The User either clicks on CALL A TAXI button or HOME button
 		\item The system shows the page used to call a taxi
 		\item The User chooses if insert an address or use his own position $($via GPS$)$
 		\item The User clicks on OK button
@@ -153,7 +188,7 @@ Exceptions & None\\
 "Booking ride" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Booking ride\\
 \hline
@@ -168,10 +203,11 @@ Flow of events &
 		\begin{itemize}
 			\item Origin position $($can be usd the GPS$)$
 			\item Destination
+			\item Number of people traveling
 			\item Departuring Time
 			\item An option to enable the Taxi Sharing
 		\end{itemize}
-		\item The User fills the fields and clicks OK button
+		\item The User fills the fields and clicks OK button or select a similar ride from a pannel and join that ride
 	\end{itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the data inserted by the User and updares its booking list\\
@@ -185,7 +221,7 @@ Exceptions & The guest inserts wrong new data like an impossible hour\\
 "Edit Booking" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Edit Booking\\
 \hline
@@ -200,7 +236,7 @@ Flow of events &
 			\item The User chooses a booking and clicks on MODIFY button
 			\item The System shows the page of the booking with the field filled when it was created
 			\item The User modifies the data and clicks on SAVE button
-	\end{itemize}\\			
+	\end{itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the new data of the booking and updates its booking list\\
 \hline
@@ -212,7 +248,7 @@ Exceptions & The User inserts wrong data like an hour to close to that moment\\
 "Cancel Booking" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Cancel Booking\\
 \hline
@@ -225,7 +261,7 @@ Flow of events &
 		\item The User clicks on MY BOOKINGS button
 		\item The system shows a page with all the User's bookings
 		\item The User chooses a booking and clicks on CANCEL button
-		\item The System shows a page that ask the user to confirm the cancel \askpippo
+		\item The System shows a page that ask the user to confirm the cancellation \askpippo
 		\item The User clicks the OK button
 	\end{itemize}\\
 \hline
@@ -239,7 +275,8 @@ Exceptions & The User tries to cancel a booking that has a departure hour that i
 "View status and accept sharing" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+$[$ non so come farla nei mockup$]$\askpippo\\
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & View status and accept sharing\\
 \hline
@@ -247,7 +284,7 @@ Actor & User\\
 \hline
 Entry conditions & The User must have booked at least one ride with the sharing option\\
 \hline
-Flow of events & 
+Flow of events &
 	\begin{itemize}
 			\item The User clicks on MY BOOKINGS button
 			\item The system shows a page with all the User's bookings
@@ -266,23 +303,21 @@ Exceptions & None\\
 "View past bookings" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & View past bookings\\
 \hline
 Actor & User\\
 \hline
-Entry conditions & The User must have booked at taken at least one ride\\
+Entry conditions & The User must have booked and taken at least one ride \askpippo\\
 \hline
 Flow of events &
 	\begin{itemize}
 		\item The User clicks on MY BOOKINGS button
-		\item The system shows a page with all the User's bookings $($if there are any$)$
-		\item The User clicks on PAST BOOKINGS button
-		\item The system shows a page with the User's past booking
-		\item The User can see the details of a particular booking clicking on the DETAILS button
+		\item The system shows a page with all the User's bookings $($if there are any$)$ and the booking history
+		\item The User can see the details of a particular booking by selecting one
 	\end{itemize}\\
-	
+
 \hline
 Exit conditions & The system shows again the User's booking page\\
 \hline
@@ -294,7 +329,7 @@ Exceptions & None\\
 "Set Working Condition" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Set Working Condition\\
 \hline
@@ -303,13 +338,13 @@ Actor & Taxi Driver\\
 Entry conditions & None\\
 \hline
 Flow of events &
-	\begin{itemize}
+	\begin {itemize}
 		\item The Driver clicks on MODIFY WORKING STATE button
 		\item The system shows a page with the current working state and, if the state is on "working", the amount of time the Driver has been working
 		\item The Driver clicks on SET WORKING or SET NOT WORKING button to set his situation
 		\item The system shows the working state page updated
-	\end{itemize}\\
-	
+	\end {itemize}\\
+
 \hline
 Exit conditions & The system updates the Driver's condition\\
 \hline
@@ -323,7 +358,7 @@ Exceptions & None\\
 "Accept or refuse a job" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Accept or refuse a job\\
 \hline
@@ -332,12 +367,12 @@ Actor & Taxi Driver\\
 Entry conditions & The Driver must have been notificated of the presence of a possibile ride \askpippo\\
 \hline
 Flow of events &
-	\begin{itemize}
+	\begin {itemize}
 		\item The Driver opens the notification
 		\item The system shows a page the data of the ride
 		\item The Driver clicks on ACCEPT or REFUSE button
 		\item The system shows a confirmation page
-	\end{itemize}\\
+	\end {itemize}\\
 \hline
 Exit conditions & The system either notifies the asker and removes the Driver from the queue if he accepted, or moves the Driver to the bottom of the queue if he refused\\
 \hline
@@ -351,7 +386,7 @@ Exceptions & None\\
 "Notify the end of a ride" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Notify the end of a ride\\
 \hline
@@ -366,7 +401,7 @@ Flow of events &
 		\item The Driver clicks on the OK or CANCEL button to confirm or not
 		\item The system shows the homepage again
 	\end{itemize}\\
-	
+
 \hline
 Exit conditions & The system add the Driver to the queue\\
 \hline
@@ -379,7 +414,7 @@ Exceptions & None\\
 "Log Out" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Log Out\\
 \hline
