@@ -17,14 +17,13 @@ These are the use cases which are part of the service
 	\item Accept or refuse a job
 	\item Logout
 	
-	%%%%%%%%%%%%%%%%%%%
-	%                 %
-	%immagine use case%
-	%                 %
-	%%%%%%%%%%%%%%%%%%%
-	
 	
 \end{itemize}
+
+%-------------------------------------------------------
+%Use case
+%-------------------------------------------------------
+
 %\endsubsection
 \subsection{Use Case Description}
 These are the detailed descriptions of the Use Cases listed and shown before
@@ -36,7 +35,7 @@ These are the detailed descriptions of the Use Cases listed and shown before
 "Sign up" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|} 
 \hline
 Name & Sign up\\
 \hline
@@ -44,18 +43,22 @@ Actor & Guest\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The guest enters the website\\
-			&	\tabitem The guest clicks the SIGN UP button\\
-			&	\tabitem The guest fills the following fields:\\
-			&	\tabtratt Account type $($User or Taxi Driver$)$\\
-			&	\tabtratt Name\\
-			&	\tabtratt Surname\\
-			&	\tabtratt E-mail\\
-			&	\tabtratt Password\\
-			&	\tabtratt Payament system $($optional, only for Users$)$\\
-			&	\tabtratt Taxi Code $($only for Taxi Drivers$)$\\
-			&	\tabitem The Guest clicks on CONFIRM button\\
+Flow of events & 
+	\begin{itemize}
+		\item The guest enters the website
+		\item The guest clicks the SIGN UP button
+		\item The guest fills the following fields:
+		\begin{itemize}
+			\item Account type $($User or Taxi Driver$)$
+			\item Name
+			\item Surname
+			\item E-mail
+			\item Password
+			\item Payament system $($optional, only for Users$)$
+			\item Taxi Code $($only for Taxi Drivers$)$
+		\end{itemize}
+		\item The Guest clicks on CONFIRM button
+	\end{itemize}\\
 \hline
 Exit conditions & The system shows the home page personalized with the user credential and updates its database. If the Guests signs up as a taxi driver, matches his profile with the taxi code in the database\\
 \hline
@@ -69,7 +72,7 @@ Exceptions & The guest inserts the wrong email/password combination, the email i
 "Log in" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|} 
 \hline
 Name & Log in\\
 \hline
@@ -77,10 +80,11 @@ Actor & Guest\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The guest enters the website\\
-			&	\tabitem The guest fills the text field requested $($email and password$)$\\
-			&	\tabitem The guest clicks on LOG IN button\\
+Flow of events & \begin{itemize}
+					\item The guest enters the website
+					\item The guest fills the text field requested $($email and password$)$
+					\item The guest clicks on LOG IN button
+				\end{itemize}\\
 \hline
 Exit conditions & The system shows the home page personalized with the user credential\\
 \hline
@@ -93,7 +97,7 @@ Exceptions & The guest inserts the wrong email/password combination or the email
 "Edit user's data" case:
 \\
 \\
-\begin{tabular}{|l|p{10cm}|} 
+\begin{tabular}{|p{3cm}|p{10cm}|} 
 \hline
 Name & Edit user's data\\
 \hline
@@ -101,13 +105,15 @@ Actor & User and Taxi driver\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on EDIT USER DATA button\\
-			&	\tabitem The system shows the list of data that the User filled when he signed up\\
-			&	\tabitem The User modifies the data\\
-			&	\tabitem The User clicks on SAVE button\\
-			&	\tabitem The system shows the modified data list\\
-			&	\tabitem The User click on OK button\\
+Flow of events & 
+	\begin{itemize}
+		\item The User clicks on EDIT USER DATA button
+		\item The system shows the list of data that the User filled when he signed up
+		\item The User modifies the data
+		\item The User clicks on SAVE button
+		\item The system shows the modified data list
+		\item The User click on OK button
+	\end{itemize}	\\
 \hline
 Exit conditions & The system shows the home page personalized with the user credential\\
 \hline
@@ -128,11 +134,13 @@ Actor & Guest and User\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on CALL A TAXI button\\
-			&	\tabitem The system shows the page used to call a taxi\\
-			&	\tabitem The User chooses if insert an address or use his own position $($via GPS$)$\\
-			&	\tabitem The User clicks on OK button\\
+Flow of events &
+	\begin{itemize}
+		\item The User clicks on CALL A TAXI button
+		\item The system shows the page used to call a taxi
+		\item The User chooses if insert an address or use his own position $($via GPS$)$
+		\item The User clicks on OK button
+	\end{itemize}\\
 \hline
 Exit conditions & The system shows a confirmation message\\
 \hline
@@ -153,14 +161,18 @@ Actor & User\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on BOOK A RIDE button\\
-			&	\tabitem The system shows a page with the field that the User has to fill:\\
-			&	\tabtratt Origin position $($can be usd the GPS$)$\\
-			&	\tabtratt Destination\\
-			&	\tabtratt Departuring Time\\
-			&	and an option to enable the Taxi Sharing\\
-			&	\tabitem The User fills the fields and clicks OK button\\
+Flow of events &
+	\begin{itemize}
+		\item The User clicks on BOOK A RIDE button
+		\item The system shows a page with the field that the User has to fill:
+		\begin{itemize}
+			\item Origin position $($can be usd the GPS$)$
+			\item Destination
+			\item Departuring Time
+			\item An option to enable the Taxi Sharing
+		\end{itemize}
+		\item The User fills the fields and clicks OK button
+	\end{itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the data inserted by the User and updares its booking list\\
 \hline
@@ -181,13 +193,14 @@ Actor & User\\
 \hline
 Entry conditions & The User must have booked at least one ride\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on MY BOOKINGS button\\
-			&	\tabitem The system shows a page with all the User's bookings\\
-			&	\tabitem The User chooses a booking and clicks on MODIFY button\\
-			&	\tabitem The System shows the page of the booking with the field filled when it was created\\
-			&	\tabitem The User modifies the data and clicks on SAVE button\\
-			
+Flow of events &
+	\begin{itemize}
+			\item The User clicks on MY BOOKINGS button
+			\item The system shows a page with all the User's bookings
+			\item The User chooses a booking and clicks on MODIFY button
+			\item The System shows the page of the booking with the field filled when it was created
+			\item The User modifies the data and clicks on SAVE button
+	\end{itemize}\\			
 \hline
 Exit conditions & The system shows the confirmation page with the new data of the booking and updates its booking list\\
 \hline
@@ -207,12 +220,14 @@ Actor & User\\
 \hline
 Entry conditions & The User must have booked at least one ride\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on MY BOOKINGS button\\
-			&	\tabitem The system shows a page with all the User's bookings\\
-			&	\tabitem The User chooses a booking and clicks on CANCEL button\\
-			&	\tabitem The System shows a page that ask the user to confirm the cancel \askpippo\\
-			&	\tabitem The User clicks the OK button\\	
+Flow of events &
+	\begin{itemize}
+		\item The User clicks on MY BOOKINGS button
+		\item The system shows a page with all the User's bookings
+		\item The User chooses a booking and clicks on CANCEL button
+		\item The System shows a page that ask the user to confirm the cancel \askpippo
+		\item The User clicks the OK button
+	\end{itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page and updates its booking list\\
 \hline
@@ -232,13 +247,14 @@ Actor & User\\
 \hline
 Entry conditions & The User must have booked at least one ride with the sharing option\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on MY BOOKINGS button\\
-			&	\tabitem The system shows a page with all the User's bookings\\
-			&	\tabitem The User chooses a shared ride and clicks on STATUS button\\
-			&	\tabitem The system shows a page with the sharing situation\\
-			&	\tabitem The User can accept or refuse a adviced sharing clicking on ACCEPT or REFUSE buttons\\
-	
+Flow of events & 
+	\begin{itemize}
+			\item The User clicks on MY BOOKINGS button
+			\item The system shows a page with all the User's bookings
+			\item The User chooses a shared ride and clicks on STATUS button
+			\item The system shows a page with the sharing situation
+			\item The User can accept or refuse a adviced sharing clicking on ACCEPT or REFUSE buttons
+	\end{itemize}\\
 \hline
 Exit conditions & The system shows again the User's booking page\\
 \hline
@@ -258,12 +274,14 @@ Actor & User\\
 \hline
 Entry conditions & The User must have booked at taken at least one ride\\
 \hline
-Flow of events
-			&	\tabitem The User clicks on MY BOOKINGS button\\
-			&	\tabitem The system shows a page with all the User's bookings $($if there are any$)$\\
-			&	\tabitem The User clicks on PAST BOOKINGS button\\
-			&	\tabitem The system shows a page with the User's past booking\\
-			&	\tabitem The User can see the details of a particular booking clicking on the DETAILS button\\
+Flow of events &
+	\begin{itemize}
+		\item The User clicks on MY BOOKINGS button
+		\item The system shows a page with all the User's bookings $($if there are any$)$
+		\item The User clicks on PAST BOOKINGS button
+		\item The system shows a page with the User's past booking
+		\item The User can see the details of a particular booking clicking on the DETAILS button
+	\end{itemize}\\
 	
 \hline
 Exit conditions & The system shows again the User's booking page\\
@@ -284,12 +302,13 @@ Actor & Taxi Driver\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The Driver clicks on MODIFY WORKING STATE button\\
-			&	\tabitem The system shows a page with the current working state and, if the state is on "working", the amount of time the Driver has been working\\
-			&	\tabitem The Driver clicks on SET WORKING or SET NOT WORKING button to set his situation\\
-			&	\tabitem The system shows the working state page updated\\
-
+Flow of events &
+	\begin{itemize}
+		\item The Driver clicks on MODIFY WORKING STATE button
+		\item The system shows a page with the current working state and, if the state is on "working", the amount of time the Driver has been working
+		\item The Driver clicks on SET WORKING or SET NOT WORKING button to set his situation
+		\item The system shows the working state page updated
+	\end{itemize}\\
 	
 \hline
 Exit conditions & The system updates the Driver's condition\\
@@ -312,12 +331,13 @@ Actor & Taxi Driver\\
 \hline
 Entry conditions & The Driver must have been notificated of the presence of a possibile ride \askpippo\\
 \hline
-Flow of events
-			&	\tabitem The Driver opens the notification\\
-			&	\tabitem The system shows a page the data of the ride\\
-			&	\tabitem The Driver clicks on ACCEPT or REFUSE button\\
-			&	\tabitem The system shows a confirmation page\\
-	
+Flow of events &
+	\begin{itemize}
+		\item The Driver opens the notification
+		\item The system shows a page the data of the ride
+		\item The Driver clicks on ACCEPT or REFUSE button
+		\item The system shows a confirmation page
+	\end{itemize}\\
 \hline
 Exit conditions & The system either notifies the asker and removes the Driver from the queue if he accepted, or moves the Driver to the bottom of the queue if he refused\\
 \hline
@@ -339,11 +359,13 @@ Actor & Taxi Driver\\
 \hline
 Entry conditions & The Driver must have already accepted a ride\\
 \hline
-Flow of events
-			&	\tabitem The Driver clicks on the RIDE COMPLETED button in his homepage\\
-			&	\tabitem The system shows a page to ask for confirmation\\
-			&	\tabitem The Driver clicks on the OK or CANCEL button to confirm or not\\
-			&	\tabitem The system shows the homepage again\\
+Flow of events &
+	\begin{itemize}
+		\item The Driver clicks on the RIDE COMPLETED button in his homepage
+		\item The system shows a page to ask for confirmation
+		\item The Driver clicks on the OK or CANCEL button to confirm or not
+		\item The system shows the homepage again
+	\end{itemize}\\
 	
 \hline
 Exit conditions & The system add the Driver to the queue\\
@@ -365,9 +387,11 @@ Actor & User and Taxi Driver\\
 \hline
 Entry conditions & None\\
 \hline
-Flow of events
-			&	\tabitem The user clicks on LOG OUT button\\
-			&	\tabitem The system shows the Guest's homepage\\	
+Flow of events &
+	\begin{itemize}
+		\item The user clicks on LOG OUT button
+		\item The system shows the Guest's homepage
+	\end{itemize}\\
 \hline
 Exit conditions & None\\
 \hline
