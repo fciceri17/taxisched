@@ -66,6 +66,7 @@ Exceptions & The guest inserts the wrong email/password combination, the email i
 \end {tabular}
 
 \newpage
+\askpippo\\
 "Taxi driver sign up" case:
 \\
 \\
@@ -89,7 +90,7 @@ Flow of events &
 			\item Date of birth
 			\item Password
 			\item Driver license
-			\item Car targa \askpippo
+			\item Licence plate
 			\item Taxi license
 		\end {itemize}
 		\item The Guest clicks on CONFIRM button
@@ -241,6 +242,7 @@ Flow of events &
 Exit conditions & The system shows the confirmation page with the new data of the booking and updates its booking list\\
 \hline
 Exceptions & The User inserts wrong data like an hour to close to that moment\\
+			& The User tries to modify a ride less that ten minutes before its departuring time\\
 \hline
 \end {tabular}
 
@@ -261,7 +263,7 @@ Flow of events &
 		\item The User clicks on MY BOOKINGS button
 		\item The system shows a page with all the User's bookings
 		\item The User chooses a booking and clicks on CANCEL button
-		\item The System shows a page that ask the user to confirm the cancellation \askpippo
+		\item The System shows a page that ask the user to confirm the cancellation
 		\item The User clicks the OK button
 	\end{itemize}\\
 \hline
@@ -300,16 +302,16 @@ Exceptions & None\\
 \end {tabular}
 
 \newpage
-"View past bookings" case:
+"View past rides" case:
 \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
-Name & View past bookings\\
+Name & View past rides\\
 \hline
 Actor & User\\
 \hline
-Entry conditions & The User must have booked and taken at least one ride \askpippo\\
+Entry conditions & The User must have ordered at least one ride\\
 \hline
 Flow of events &
 	\begin{itemize}
@@ -364,7 +366,7 @@ Name & Accept or refuse a job\\
 \hline
 Actor & Taxi Driver\\
 \hline
-Entry conditions & The Driver must have been notificated of the presence of a possibile ride \askpippo\\
+Entry conditions & The Driver must have been notified of the presence of a possibile ride\\
 \hline
 Flow of events &
 	\begin {itemize}
