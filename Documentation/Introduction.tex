@@ -1,4 +1,4 @@
-\section{Introduction}
+	\section{Introduction}
 
 \subsection{Purpose}
 	This RASD is a specification document intended to outline the measures being taken to implement "myTaxiService", a service which will be used
@@ -19,19 +19,31 @@
 				\begin{itemize}
 					\item A server application that handles live queues
 					\item A database that stores user data, including credentials
-					\item Another database that handles REGISTERED user rides, memorizing both booked rides and past itineraries
+					\item Another database that handles Registered user rides, memorizing both booked rides and past itineraries
 				\end{itemize}
 		\end{description}
-		The application should distinguish between regular users and drivers, and should automatically queue booked rides.
+		The service will allow customers to instantly call a taxi, without requiring authentication. In case of advance booking, users need to login
+		first, and can then access authenticated user functions. These include for example being able to book a taxi for a future date.\\
+		When booking taxis, a registered user may enable ride-sharing. Ride-sharing queues up a customer's ride into the system, which will handle merging multiple requests into
+		a single unified ride, which shall only marginally alter each single request by a small amount, determined by some predefined parameters.\\
+		Authenticated users can also modify their already booked rides, as well as cancel them within a time frame of 2 hours from the start of their ride, and also modify
+		their personal and payment information.\\
+		Taxi drivers will have an interface which allows them to communicate when they start and stop working(being available), and the menu to accept or refuse a 
+		job. Drivers will also have an option to remove themselves from the queue, for the occasions when they pick up passengers from the street.
+		The system is responsible for sending the appropriate notifications to the customer when their ride has been accepted, along with information
+		on the taxi coming to pick them up,	as well as provide an estimate of the time remaining before the start of their ride.
 	%\endsubsubsection
-	\subsubsection{Applications} %todo goals
-		This service is intended to simplify the process of acquring a taxi in X. It should remove the need of a human operator
+	\subsubsection{Applications}
+		This service is intended to simplify the process of acquiring a taxi in X. It should remove the need of a human operator
 	%\endsubsubsection
 	\subsubsection{Goals}
 		The service should allow users to do the following things:
 		\begin{enumerate}
-		\item 
-		\item 
+		\item Allow a customer to get a taxi instantly, much like dialing the taxi number in any city
+		\item Allow a customer, after registration, to book a taxi for a specific date and time
+		\item Allow registered users to automatically share rides with each other, through an automatic queueing system
+		\item Allow taxi drivers to accept rides both through the application and externally in a seamless manner
+		\item Assign taxi drivers to customers automatically 
 		\end{enumerate}
 			
 	%\endsubsubsection
@@ -44,6 +56,8 @@
 			A user of the service who has gone through the registration process, whose information is stored within the service's database.
 		\item[Driver]
 			A user of the service that provides their taxi for the service. They are registered in a manner different from that of other users.
+		\item[Customer]
+			Any person trying to use a taxi through the application, both a registered users and guests.
 	\end{description}
 %\endsubsection
 \subsection{Overview}
@@ -51,7 +65,7 @@
 	The next section describes the service's structure, how the service operates, what each type of user can do and the way the
 	back-end infrastructure operates. \\
 	The following one analyses what is going to be required to make the actual application work.
-	The final sections are composed of  use case and sequence diagrams intended to describe the application's behavior upon user
-	interaction.
+	The final sections are composed of  use case and sequence diagrams, and an alloy analysis, intended to describe the application's behaviour upon user
+	interaction and analyse the consistency of the service's intended behaviour.
 %\endsubsection
 
