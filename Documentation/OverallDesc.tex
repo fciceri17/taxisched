@@ -1,6 +1,6 @@
 \section{Overall Descriptions}
 
-\subsection{Product Persepective}
+\subsection{Product Perspective}
 	\subsubsection{System Interfaces}
 		
 	\subsubsection{User Interfaces}
@@ -22,14 +22,23 @@
 \subsection{Product Functions}
 	\subsubsection{User Characteristics}
 		The user shall %TODO verify laws regarding taxis in Milan - age etc
-	\subsubsection{Constraints}
-		\begin{itemize}
-			\item Since the application is being commissioned by the government, there should be no legal problems with the usage of the app in regards
-			to competitive laws.
-			\item Gps may not be available on all devices, therefore manual address insertion may be necessary/mandatory in some cases.
-			\item The application may not be used without internet access. This includes viewing logs, which are only stored server-side.
-			\item Due to privacy regulations, the identity of drivers and passengers will be protected even within system logs.
-		\end{itemize}
-	\subsubsection{Assumptions}	
+%\endsubsection
+\subsection{Constraints}
+	\subsubsection{Regulatory policies}
+		Since the application is being commissioned by the government of X, there should be no issues concerning regulatory policies, since this
+		application doesn't introduce any competitors, but only acts as an aid to an existing system.
+	\subsubsection{Hardware limitations}
+		The only hardware limitations regard the availability of an internet connection, since the service cannot operate without one. Therefore, devices
+		with no connectivity can't make use of the application.
+	\subsubsection{Interfaces to other applications}
+		myTaxiService doesn’t have to interfaces with any other applications.
+	\subsubsection{Parallel operation}
+		The service shall be able to function independent of how many users may be using the application at any time.
+	\subsubsection{Safety and Security Considerations}
+		Due to privacy issues, the identity of customers shall be protected at all stages. Therefore, the identity of customers going on shared
+		rides shall not know the identity of other customers ahead of time. Also, when accessing logs via the web interface, the database shall never
+		return information about customers different from the one requesting it.
+%\endsubsection
+\subsection{Assumptions}	
 	
 %\endsubsection 
