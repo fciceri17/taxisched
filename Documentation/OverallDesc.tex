@@ -39,6 +39,20 @@
 		rides shall not know the identity of other customers ahead of time. Also, when accessing logs via the web interface, the database shall never
 		return information about customers different from the one requesting it.
 %\endsubsection
-\subsection{Assumptions}	
-	
+\subsection{Assumptions}
+Creating our project we had to assume some facts to clarify some unspecified situations.
+We assume that:
+\begin {itemize}
+	\item If a customer calls a taxi, he will be there when it arrives
+	\item When a Taxi Driver accepts or refuses a ride, he won't change his mind.
+	\item If a Taxi Driver accepts a ride, he won't miss the appointment.
+	\item All the taxis in the city have the same number of seats. A customer inserts the number of seats he needs, then the system calculates the needed number of taxis.
+	\item In the city there are enough taxis to satisfy every call. There won't be any User that will have to wait for his taxi more than the established time. 
+	\item A User can't modify or cancel a booking if the system has already sent the notification to the Taxi Drivers, namely 10 minutes before the depaturing time.
+	\item When a User selects the sharing option the system will provide a list of rides that can he can join. If the User doesn't choose any of them, the system will match the rides autonomously.
+	\item When thw system finds a possible match for a shared ride notifies every User involved &(&the one that joins and the ones who are already in the ride&)& and everyone has to accept. 
+	\item Only Users and Taxi Drivers have a personal page.
+	\item The Sing Up function is used by Guests to be registered as Users. I tassisti avranni degli account particolari che gli verranno dati dal comune quando si segnaleranno come tassisti \askpippo
+	\item There are no usernames, the Log In is performed with e-mail and password.
+\end{itemize}
 %\endsubsection 
