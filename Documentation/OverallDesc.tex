@@ -22,6 +22,40 @@
 \subsection{Product Functions}
 	\subsubsection{User Characteristics}
 		The user shall %TODO verify laws regarding taxis in Milan - age etc
+	\subsubsection{User Access and Registration}
+		Customer have the option of registering with the service. This must be done with email and password. Password recovery functions are available.
+		This enables the reservation function. Unregistered users may still make use of the instant call function. \\
+		Being a registered user gives access to a personal page. Other than making reservations, user and payment data may be edited here. There should also
+		be an option that lets a user see a list of past reservations. \\
+		Taxi drivers on the other hand cannot register through the site. Their information is inserted manually into the system by an administrator
+		and a special set of credentials is sent to them. 
+	\subsubsection{Instant Call}
+		This is the most basic function of the application, and is available to all customers. The user supplies their position immediately and the order is 
+		sent to all nearby taxi drivers. %TODO add codes and time remaining etc
+	\subsubsection{Reservation}
+		This function is only available for registered users. The user inputs their desired date and time of departure, as well as the location, and their destination
+		Reservations have to be made, and eventually modified or cancelled, at least 2 hours before the start of the ride. However, even a reserved ride is treated like all other calls, and 
+		therefore is assigned to a taxi driver only 10 minutes before the start of the trip.
+		A reservation is considered locked when it can no longer be cancelled or modified (2 hours before the start of the trip).
+	\subsubsection{Shared Taxi Function}
+		Ride sharing is an advanced option of the regular reservation function. When a user enables sharing, they are inserted into a queue for the shared ride
+		function. As soon as one request in the queue can be locked, the system scans the queue and creates an itinerary inserting as many possible shared 
+		requests into a single order. All participants in the order will be notified of the full itinerary, and their approximate pick-up time.
+		When this request is sent to taxi drivers, they receive the full itinerary including all stops they have to make.\\
+		Note that shared rides can be split into dropping off and picking up different passengers during the same ride, as long as the fee each customer pays
+		is proportional to the length of the trip and the time travelled. 
+	\subsubsection{Taxi Driver Status}
+		Due to the way taxis work, a taxi driver is free to set their own schedule. Therefore, the application allows them to set their working status, that is to
+		toggle it between working and not working. When a driver is working, they are inserted into the worker queue, and when they reach the top of the queue they 
+		receive the available offers. \\
+		When a driver accepts a ride, they are removed from the queue. Once they complete the ride, they notify the system, which automatically reinserts them
+		into the queue. If a rider refuses a ride, they are moved to the end of the queue.
+		Taxi drivers can also temporarily remove themselves from the queue when they pick up passengers the traditional way. In this case, their position in the 
+		queue is RESET/FROZEN \askpippo {}. 
+	\subsubsection{Taxi Notification System}
+		Notifications for rides are sent to both the taxi driver and the customer. The mode in which a taxi driver interacts with notifications is described above. \\
+		Customers on the other hand receive a notification with an estimated arrival time when one of their orders is accepted. They also receive a notification
+		when their reservation becomes locked, which includes both simple reservations and shared rides. 
 %\endsubsection
 \subsection{Constraints}
 	\subsubsection{Regulatory policies}
@@ -43,17 +77,14 @@
 Creating our project we had to assume some facts to clarify some unspecified situations.
 We assume that:
 \begin {itemize}
-	\item Guests can only make instant calls, Users instead can also book rides.
 	\item If a customer calls a taxi, he will be there when it arrives.
 	\item If a Taxi Driver accepts or refuses a ride, he won't change his mind.
 	\item If a Taxi Driver accepts a ride, he won't miss the appointment.
+	\item A Taxi Driver may pick up passengers who are not using the app. Doing so temporarily removes them from the queue.
+	\item Each Taxi has a unique code assigned to it.
+	\item Each customer will create at most one account.
+	\item Taxi drivers take no longer than 10 minutes to reach the customer.s
 	\item All the taxis in the city have the same number of seats. A customer inserts the number of seats he needs, then the system calculates the required number of taxis.
-	\item In the city there are enough taxis to satisfy every call. There won't be any User that will have to wait for his taxi more than the established time. 
-	\item A User can't modify or cancel a booking if the system has already sent the notification to the Taxi Drivers, namely 10 minutes before the depaturing time.
-	\item When a User selects the sharing option the system will provide a list of rides that can he can join. If the User doesn't choose any of them, the system will match the rides autonomously.
-	\item When the system finds a possible match for a shared ride notifies every User involved &(&the one that joins and the ones who are already in the ride&)& and everyone has to accept. 
-	\item Only Users and Taxi Drivers have a personal page.
-	\item The Sing Up function is used by Guests to be registered as Users. I tassisti avranni degli account particolari che gli verranno dati dal comune quando si segnaleranno come tassisti \askpippo
-	\item There are no usernames, the Log In is performed with e-mail and password.
+	\item In the city there are enough taxis to satisfy every call. There won't be any customer that will have to wait for his taxi more than the established time. 
 \end{itemize}
 %\endsubsection 
