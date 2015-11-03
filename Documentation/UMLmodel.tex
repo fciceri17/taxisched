@@ -10,7 +10,6 @@ These are the use cases which are part of the service
 	\item Booking ride
 	\item Edit booking
 	\item Cancel booking
-	\item View status and accept sharing
 	\item View past rides
 	\item Set working condition
 	\item Notify end of a ride
@@ -61,45 +60,7 @@ Flow of events &
 \hline
 Exit conditions & The system shows the home page personalized with the user credential and updates its database.\\
 \hline
-Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system or some fields are empthy.\\
-\hline
-\end {tabular}
-
-\newpage
-\askpippo\\
-"Taxi driver sign up" case:
-\\
-\\
-\begin {tabular} {|p{3cm}|p{10cm}|}
-\hline
-Name & Taxi drver sign up\\
-\hline
-Actor & Guest\\
-\hline
-Entry conditions & None\\
-\hline
-Flow of events &
-	\begin {itemize}
-		\item The guest enters the website
-		\item The guest clicks the taxi drver signup button in the bottom of the page
-		\item The guest fills the following fields:
-		\begin {itemize}
-			\item Name
-			\item Surname
-			\item E-mail
-			\item Date of birth
-			\item Password
-			\item Driver license
-			\item Licence plate
-			\item Taxi license
-		\end {itemize}
-		\item The Guest clicks on CONFIRM button
-	\end {itemize}\\
-\hline
-Exit conditions & The system shows the home page personalized with the user credential and updates its database.\\
-\hline
-Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system, does not matches his profile with the taxi
-code in the database or some fields are empthy.\\
+Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system or some fields are empty.\\
 \hline
 \end {tabular}
 
@@ -172,10 +133,10 @@ Entry conditions & None\\
 \hline
 Flow of events &
 	\begin{itemize}
-		\item The User either clicks on CALL A TAXI button or HOME button
+		\item The customer either clicks on CALL A TAXI button or HOME button
 		\item The system shows the page used to call a taxi
-		\item The User chooses if insert an address or use his own position $($via GPS$)$
-		\item The User clicks on OK button
+		\item The customer chooses if insert an address or use his own position $($via GPS$)$
+		\item The customer clicks on OK button
 	\end{itemize}\\
 \hline
 Exit conditions & The system shows a confirmation message\\
@@ -228,13 +189,15 @@ Name & Edit Booking\\
 \hline
 Actor & User\\
 \hline
-Entry conditions & The User must have booked at least one ride\\
+Entry conditions & The User must have booked at least one ride, the reservation isn't scheduled less than 2 hours from that moment\\
 \hline
 Flow of events &
 	\begin{itemize}
 			\item The User clicks on MY BOOKINGS button
 			\item The system shows a page with all the User's bookings
-			\item The User chooses a booking and clicks on MODIFY button
+			\item The User chooses a booking and clicks on STATUS button
+			\item The system shows a page with all the info of the reservation
+			\item The User clicks on MODIFY button
 			\item The System shows the page of the booking with the field filled when it was created
 			\item The User modifies the data and clicks on SAVE button
 	\end{itemize}\\
@@ -256,13 +219,15 @@ Name & Cancel Booking\\
 \hline
 Actor & User\\
 \hline
-Entry conditions & The User must have booked at least one ride\\
+Entry conditions & The User must have booked at least one ride, the reservation isn't scheduled less than 2 hours from that moment\\
 \hline
 Flow of events &
 	\begin{itemize}
 		\item The User clicks on MY BOOKINGS button
 		\item The system shows a page with all the User's bookings
-		\item The User chooses a booking and clicks on CANCEL button
+		\item The User chooses a booking and clicks on STATUS button
+		\item The system shows a page with all the info of the reservation
+		\item the User clicks on CANCEL button
 		\item The System shows a page that ask the user to confirm the cancellation
 		\item The User clicks the OK button
 	\end{itemize}\\
@@ -273,33 +238,7 @@ Exceptions & The User tries to cancel a booking that has a departure hour that i
 \hline
 \end {tabular}
 
-\newpage
-"View status and accept sharing" case:
-\\
-\\
-$[$ non so come farla nei mockup$]$\askpippo\\
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-Name & View status and accept sharing\\
-\hline
-Actor & User\\
-\hline
-Entry conditions & The User must have booked at least one ride with the sharing option\\
-\hline
-Flow of events &
-	\begin{itemize}
-			\item The User clicks on MY BOOKINGS button
-			\item The system shows a page with all the User's bookings
-			\item The User chooses a shared ride and clicks on STATUS button
-			\item The system shows a page with the sharing situation
-			\item The User can accept or refuse a adviced sharing clicking on ACCEPT or REFUSE buttons
-	\end{itemize}\\
-\hline
-Exit conditions & The system shows again the User's booking page\\
-\hline
-Exceptions & None\\
-\hline
-\end {tabular}
+
 
 \newpage
 "View past rides" case:
