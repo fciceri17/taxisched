@@ -46,10 +46,10 @@
 		Due to the way taxis work, a taxi driver is free to set their own schedule. Therefore, the application allows them to set their working status, that is to
 		toggle it between working and not working. When a driver is working, they are inserted into the worker queue, and when they reach the top of the queue they 
 		receive the available offers. \\
-		When a driver accepts a ride, they are removed from the queue. Once they complete the ride, they notify the system, which automatically reinserts them
-		into the queue. If a rider refuses a ride, they are moved to the end of the queue.
-		Taxi drivers can also temporarily remove themselves from the queue when they pick up passengers the traditional way. In this case, their position in the 
-		queue is RESET/FROZEN \askpippo {}. 
+		When a driver accepts a ride, they are removed from the queue. Once they complete the ride, they notify the system by clicking the "ride complete" button,
+		which automatically reinserts them into the queue. If a rider refuses a ride, they are moved to the end of the queue. \\
+		Taxi drivers can also temporarily remove themselves from the queue when they pick up passengers the traditional way. When this happens, they are removed from
+		the queue. Pressing the "ride complete" button reinserts them into the queue.
 	\subsubsection{Taxi Notification System}
 		Notifications for rides are sent to both the taxi driver and the customer. The mode in which a taxi driver interacts with notifications is described above. \\
 		Customers on the other hand receive a notification with an estimated arrival time when one of their orders is accepted. They also receive a notification
@@ -109,5 +109,17 @@ We assume that:
 			itinerary. 12:20 rolls around, and the order is automatically queued into the system. A taxi driver accepts the order, knowing the trip he needs to make all the way to the airport including the pick-up at 13:00, and picks up \${}USER1
 			and his colleague from their workplace. The taxi then reaches \${}USER2's home at 13:00 and picks him up as well. Once the three passengers are delivered to the airport, fees are split accordingly; \${}USER1 pays the full trip from
 			the workplace to \${}USER2's home and 2/3 of the trip from \${}USER2's home to the airport, while \${}USER2 pays for the remainder.
-	\end{description}
+		\item{\textbf{Scenario 5: Taxi Driver Accepting an Offer}} \\
+			\${}DRIVER1 logs into the application and selects the "start working" option. Immediately, he is inserted into the queue. After a few minutes, \${}DRIVER1 receives the notification of an available
+			ride nearby. The customer is only 2 minutes from where \${}DRIVER1 currently is, and therefore he accepts the offer. \${}DRIVER1 picks up the customer and takes him to his destination. After being paid, \${}DRIVER1 clicks the "end of ride"
+			button and is reinserted into the queue.
+		\item{\textbf{Scenario 6: Taxi Driver in Queue Picking up a Regular Passenger}} \\
+			\${}DRIVER1 is in the application queue waiting on an offer. As he drives around, he encounters a pedestrian requesting a taxi. \${}DRIVER1 selects the "remove from queue" option in the application, and therefore leaves the queue. After picking
+			up the passenger, he takes the passenger to his destination. Once the passenger reaches the destination and pays for the ride, \${}DRIVER1 click the "end of ride" button and is reinserted at the end of the queue. 
+		\item{\textbf{Scenario 7: Taxi Driver Refusal and Acceptance of a Shared Ride offer}} \\
+			\${}DRIVER1 and \${}DRIVER2 are the first two in the queue for the city center. \${}DRIVER1 receives an offer for a shared ride like that in scenario 4. \${}DRIVER1 however doesn't want to travel all the way to the airport, and since the queue
+			in the city center is never very long, refuses the offer, and gets placed at the end of the queue. \\
+			Moments later \${}DRIVER2 receives a notification for that same offer. \${}DRIVER2 accepts the offer and picks up the first two passengers. \${}DRIVER2 then driver to the pick-up location for the second customer and picks him up as well.
+			After arriving at the airport, the application, basing itself on travel time and distance tells the taxi driver how much each customer has to pay. After payment, the taxi driver selects the "end of ride" function and is reinserted into the queue.
+		\end{description}
 %\endsubsection
