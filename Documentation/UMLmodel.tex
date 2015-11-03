@@ -29,6 +29,33 @@ These are the detailed descriptions of the Use Cases listed and shown before
 \begin{Huge} da sistemare
 \end{Huge}
 
+\newpage
+"Log in" case:
+\\
+\\
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+Name & Log in\\
+\hline
+Actor & Guest\\
+\hline
+Entry conditions & None\\
+\hline
+Flow of events & \begin{itemize}
+					\item The guest enters the website
+					\item The guest fills the text field requested $($email and password$)$
+					\item The guest clicks on LOG IN button
+				\end{itemize}\\
+\hline
+Exit conditions & The system shows the home page personalized with the user credential\\
+\hline
+Exceptions & The guest inserts the wrong email/password combination or the email is not registered in the system\\
+\hline
+\end {tabular}
+\newpage
+\includegraphics [width=14cm] {home.png}\\
+\includegraphics [width=5cm] {applogin}
+
 
 \newpage
 "Sign up" case:
@@ -63,31 +90,7 @@ Exit conditions & The system shows the home page personalized with the user cred
 Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system or some fields are empty.\\
 \hline
 \end {tabular}
-
-
-\newpage
-"Log in" case:
-\\
-\\
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-Name & Log in\\
-\hline
-Actor & Guest\\
-\hline
-Entry conditions & None\\
-\hline
-Flow of events & \begin{itemize}
-					\item The guest enters the website
-					\item The guest fills the text field requested $($email and password$)$
-					\item The guest clicks on LOG IN button
-				\end{itemize}\\
-\hline
-Exit conditions & The system shows the home page personalized with the user credential\\
-\hline
-Exceptions & The guest inserts the wrong email/password combination or the email is not registered in the system\\
-\hline
-\end {tabular}
+\includegraphics [width=14cm] {signup.png}\\
 
 
 \newpage
@@ -117,6 +120,7 @@ Exit conditions & The system shows the home page personalized with the user cred
 Exceptions & The guest inserts wrong new data or doesn't fill all the required fields\\
 \hline
 \end {tabular}
+\includegraphics [width=14cm] {edituserdata.png}
 
 
 \newpage
@@ -144,13 +148,15 @@ Exit conditions & The system shows a confirmation message\\
 Exceptions & None\\
 \hline
 \end {tabular}
+\includegraphics [width=14cm] {homelogged}\\
+\includegraphics [width=5cm] {apphomelogged}
 
 
 \newpage
 "Booking ride" case:
 \\
 \\
-\begin{tabular}{|p{3cm}|p{10cm}|}
+\begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Booking ride\\
 \hline
@@ -159,31 +165,59 @@ Actor & User\\
 Entry conditions & None\\
 \hline
 Flow of events &
-	\begin{itemize}
+	\begin {itemize}
 		\item The User clicks on BOOK A RIDE button
 		\item The system shows a page with the field that the User has to fill:
-		\begin{itemize}
+		\begin {itemize}
 			\item Origin position $($can be usd the GPS$)$
 			\item Destination
 			\item Number of people traveling
 			\item Departuring Time
 			\item An option to enable the Taxi Sharing
-		\end{itemize}
+		\end {itemize}
 		\item The User fills the fields and clicks OK button or select a similar ride from a pannel and join that ride
-	\end{itemize}\\
+	\end {itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the data inserted by the User and updares its booking list\\
 \hline
 Exceptions & The guest inserts wrong new data like an impossible hour\\
 \hline
 \end {tabular}
+\includegraphics [width=14cm] {bookaride}\\
+\includegraphics [width=10cm] {appbookride}
 
+\newpage
+"View past rides" case:
+\\
+\\
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+Name & View past rides\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & The User must have ordered at least one ride\\
+\hline
+Flow of events &
+	\begin{itemize}
+		\item The User clicks on MY BOOKINGS button
+		\item The system shows a page with all the User's bookings $($if there are any$)$ and the booking history
+		\item The User can see the details of a particular booking by selecting one
+	\end{itemize}\\
+
+\hline
+Exit conditions & The system shows again the User's booking page\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+\includegraphics [width=14cm] {mybookings}
 
 \newpage
 "Edit Booking" case:
 \\
 \\
-\begin{tabular}{|p{3cm}|p{10cm}|}
+\begin {tabular} {|p{3cm}|p{10cm}|}
 \hline
 Name & Edit Booking\\
 \hline
@@ -192,7 +226,7 @@ Actor & User\\
 Entry conditions & The User must have booked at least one ride, the reservation isn't scheduled less than 2 hours from that moment\\
 \hline
 Flow of events &
-	\begin{itemize}
+	\begin {itemize}
 			\item The User clicks on MY BOOKINGS button
 			\item The system shows a page with all the User's bookings
 			\item The User chooses a booking and clicks on STATUS button
@@ -200,7 +234,7 @@ Flow of events &
 			\item The User clicks on MODIFY button
 			\item The System shows the page of the booking with the field filled when it was created
 			\item The User modifies the data and clicks on SAVE button
-	\end{itemize}\\
+	\end {itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the new data of the booking and updates its booking list\\
 \hline
@@ -208,6 +242,7 @@ Exceptions & The User inserts wrong data like an hour to close to that moment\\
 			& The User tries to modify a ride less that ten minutes before its departuring time\\
 \hline
 \end {tabular}
+\includegraphics [width=14cm] {modifyride}
 
 \newpage
 "Cancel Booking" case:
@@ -239,33 +274,6 @@ Exceptions & The User tries to cancel a booking that has a departure hour that i
 \end {tabular}
 
 
-
-\newpage
-"View past rides" case:
-\\
-\\
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-Name & View past rides\\
-\hline
-Actor & User\\
-\hline
-Entry conditions & The User must have ordered at least one ride\\
-\hline
-Flow of events &
-	\begin{itemize}
-		\item The User clicks on MY BOOKINGS button
-		\item The system shows a page with all the User's bookings $($if there are any$)$ and the booking history
-		\item The User can see the details of a particular booking by selecting one
-	\end{itemize}\\
-
-\hline
-Exit conditions & The system shows again the User's booking page\\
-\hline
-Exceptions & None\\
-\hline
-\end {tabular}
-
 \newpage
 "Set Working Condition" case:
 \\
@@ -292,6 +300,7 @@ Exit conditions & The system updates the Driver's condition\\
 Exceptions & None\\
 \hline
 \end {tabular}
+\includegraphics [width=5cm] {appdriverhome1}
 
 
 \newpage
@@ -320,6 +329,7 @@ Exit conditions & The system either notifies the asker and removes the Driver fr
 Exceptions & None\\
 \hline
 \end {tabular}
+\includegraphics [width=5cm] {appdriverhome}
 
 
 \newpage
@@ -349,6 +359,8 @@ Exit conditions & The system add the Driver to the queue\\
 Exceptions & None\\
 \hline
 \end {tabular}
+\includegraphics [width=5cm] {appdriverride}
+
 
 \newpage
 
