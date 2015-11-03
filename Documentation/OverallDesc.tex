@@ -1,8 +1,6 @@
 \section{Overall Descriptions}
 
 \subsection{Product Perspective}
-	\subsubsection{System Interfaces}
-		
 	\subsubsection{User Interfaces}
 		A home page, where you can instantly book a taxi, login and sign up. Upon logging in, according to the user type, 
 		you can access user-specific functionalities, listed in section 3.
@@ -88,3 +86,28 @@ We assume that:
 	\item In the city there are enough taxis to satisfy every call. There won't be any customer that will have to wait for his taxi more than the established time. 
 \end{itemize}
 %\endsubsection 
+\subsection{Scenarios}
+	\begin{description}
+		\item{\textbf{Scenario 1: User Registration and Login}}\\
+			\${}USER is using the service for the first time. Wanting to book a taxi, \${}USER must register first. After clicking the register button, and inserting key information, such
+			as email and password, as well as some basic demographics data, \${}USER is prompted to select a preferred payment method. After selecting credit card payment, \${}USER saves
+			credit card information on the site and is now ready to make a reservation. \\
+		\item{\textbf{Scenario 2: Unregistered User Basic Call}} \\
+			\${}USER has recently installed the application, but has not been registered with the service yet. Needing a taxi immediately, \${}USER clicks the "instant call" button and inputs his current
+			location. As soon as a driver has accepted the call, \${}USER sees an estimate of the time remaining until the taxi reaches him. Once the taxi reaches him, the \${}USER 's trip starts.
+		\item{\textbf{Scenario 3: Basic Reservation}} \\
+			\${}USER is a registered customer of the service. \${}USER logs into the service's website, and selects the "reservation" option. \${}USER inserts the date and time when he wishes to be picked
+			up. The day of the reservation comes, and 2 hours before the specified time, \${}USER 's order is locked, and a notification is sent to \${}USER. 10 minutes before the start of \${}USER 's trip, 
+			his reservation is inserted into the queue. As soon as the order is accepted, \${}USER receives another notification, with information concerning when the taxi driver will reach him, as well
+			as the taxi's code. \${}USER is picked up by the taxi and the taxi 
+		\item{\textbf{Scenario 4: Sharing Reservation}} \\
+			\${}USER1 wants to make a reservation for a taxi on monday around lunchtime, to go to the airport with a work colleague. \${}USER1 and his colleague don't mind sharing the taxi with someone else if the fee is reduced
+			by sharing. Being a registered user, \${}USER1 reserves a taxi for 2 from his workplace to the airport, enabling the sharing option. and setting the time to 12:30, aiming to reach the airport by 13:15.\\
+			\${}USER2 also has to go to the airport on monday around lunchtime. \${}USER2 lives only a few minutes from the airport, but doesn't want to go by car and pay for expensive parking. \${}USER2 thinks taking the taxi alone
+			is too expensive, and therefore tries to make a reservation with sharing. \${}USER2 sets his pick-up time at 1:00 pm. \\
+			Monday comes around, and at 10:30, the system locks \${}USER1's reservation. Seeing that \${}USER2 has a compatible request, the system automatically locks \${}USER2's order as well. Both users are notified of their full
+			itinerary. 12:20 rolls around, and the order is automatically queued into the system. A taxi driver accepts the order, knowing the trip he needs to make all the way to the airport including the pick-up at 13:00, and picks up \${}USER1
+			and his colleague from their workplace. The taxi then reaches \${}USER2's home at 13:00 and picks him up as well. Once the three passengers are delivered to the airport, fees are split accordingly; \${}USER1 pays the full trip from
+			the workplace to \${}USER2's home and 2/3 of the trip from \${}USER2's home to the airport, while \${}USER2 pays for the remainder.
+	\end{description}
+%\endsubsection
