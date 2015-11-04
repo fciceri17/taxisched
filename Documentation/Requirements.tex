@@ -1,12 +1,14 @@
 \section{Requirements}
-	\subsection {User requiremets}
-		\subsubsection {System Registration and Login}
-			The system needs to enable sign up for new users, as well as logins for existing users. Password recovery must also be available.
+	\subsection {Unregisterd User Requiremets}
+		\subsubsection {System Registration}
+			The system needs to enable sign up for new users. This will unlock the user, after a login, the access to the advanced features.
 			\begin{figure}[h!]
 				\includegraphics[width=0.9\textwidth]{test1}
 				\caption{Those mockup show the login system and the registration form via web and mobile app.}
 			\end{figure}
 			\newpage
+		\subsubsection {User Login}
+		 	The system must provide an authentication system that enable the access to advanced features.
 		\subsubsection {Instant Calls}
 			The system must let unregistered user call a taxi immediately.
 			\begin{figure}[h!]
@@ -14,7 +16,7 @@
 				\caption{In the home page user can easily call a taxi.}
 			\end{figure}
 			\newpage
-	\subsection {Registered User}
+	\subsection {Registered User Requirements}
 		\subsubsection {User edit information}
 			The system must have a profile editing function, where a user can change personal data, such as name as well as their address,
 			and also add new payment options. On top of that, the system shall log all the rides a user makes into a database.
@@ -30,6 +32,17 @@
 				\caption{In the home page user can easily call a taxi.}
 			\end{figure}
 			\newpage
+		\subsubsection {Booking and Sharing}
+			The system must let registered users book a ride for a specific date and time. On top of that, there has to be an option to share
+			rides with other people who are booking similar routes. Notifications must be sent when a match is found for shared rides.
+			\begin{figure}[h!]
+				\includegraphics[width=0.6\textwidth]{ubooking}
+				\caption{In the home page user can easily call a taxi.}
+			\end{figure}
+			\newpage
+		\subsubsection {Booking Editing and History}
+			The system must let the user to modify or cancel a booked ride (if the ride has not been locked).
+			Ride history should be avaible for registered.
 
 
 
@@ -86,6 +99,7 @@
 		\item[Taxi Driver] \hfill
 			\begin{itemize}
 				\item Set work status
+				\item Start a ride
 				\item Accept or refuse a ride
 				\item Notify end of ride
 				\item Logout
