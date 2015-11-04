@@ -37,7 +37,7 @@
 		This service is intended to simplify the process of acquiring a taxi in X. It should remove the need of a human operator
 	%\endsubsubsection
 	\subsubsection{Goals}
-		The service should allow users to do the following things:
+		The service should allow customers to do the following things:
 		\begin{enumerate}
 		\item Allow a customer to get a taxi instantly, much like dialing the taxi number in any city
 		\item Allow a customer, after registration, to book a taxi for a specific date and time
@@ -50,22 +50,34 @@
 %\endsubsection   
 \subsection{Definitions}
 	\begin{description}
-		\item[User]
+		\item[Guest]
 			A guest to the service, namely someone who may be a driver or a registered user but has not been authenticated.
-		\item[Registered User]
+		\item[Registered User/User]
 			A user of the service who has gone through the registration process, whose information is stored within the service's database.
 		\item[Driver]
 			A user of the service that provides their taxi for the service. They are registered in a manner different from that of other users.
 		\item[Customer]
 			Any person trying to use a taxi through the application, both a registered users and guests.
+		\item[Ride]
+			Generic term to talk about a taxi trip
+		\item[Instant Ride]
+			A ride ordered directly through the application which instantly assigns a taxi to a customer.
+		\item[Reservation/Booked Ride]
+			A ride booked in advance through the application.
+		\item[Ride Locking]
+			Term used to indicate reservations that have been "locked" from cancellation. A reservation is considered locked when it can no 
+			longer be cancelled or modified (2 hours before the start of the trip).
 	\end{description}
 %\endsubsection
 \subsection{Overview}
-	This document is followed by a few more sections.
-	The next section describes the service's structure, how the service operates, what each type of user can do and the way the
-	back-end infrastructure operates. \\
-	The following one analyses what is going to be required to make the actual application work.
-	The final sections are composed of  use case and sequence diagrams, and an alloy analysis, intended to describe the application's behaviour upon user
-	interaction and analyse the consistency of the service's intended behaviour.
+	This document is composed by the following sections:
+	\begin{enumerate}
+	\item The introduction, which contains basic information on how the service works
+	\item Overall description, which describes the service's structure, how the service operates, what each type of user can do and the way the
+	back-end infrastructure operates. 
+	\item Requirements, a section that analyses what is going to be required to make the actual application work.
+	\item UML, where UML diagrams show the way user functions operate, as well as how the app shall be structured.
+	\item Alloy, where \askpippo
+	\end{enumerate}
 %\endsubsection
 
