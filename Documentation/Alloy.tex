@@ -1,0 +1,62 @@
+\section {Alloy}
+
+\subsection{Analysis}
+The following alloy model is obtained by referring to our class diagram. Our code file has been structured by first inserting signatures, followed by facts, assertions and predicates.
+The complete code file is available on github. The results of our analysis, namely the generated worlds, are available at the end of this section.
+
+\subsection{Signatures}
+\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.75\textwidth]{"myTaxiServiceImg/Alloy/Signatures"}
+\end{figure}
+
+\newpage
+
+\subsection{Facts}
+\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.65\textwidth]{"myTaxiServiceImg/Alloy/Facts"}
+\end{figure}
+
+\newpage
+\subsection{Assertions}
+\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.65\textwidth]{"myTaxiServiceImg/Alloy/Assertions"}
+\end{figure}
+
+\newpage\subsection{Predicates}
+\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.65\textwidth]{"myTaxiServiceImg/Alloy/Predicates"}
+\end{figure}
+
+\subsection{Review}
+\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.65\textwidth]{"myTaxiServiceImg/Alloy/Review"}
+\end{figure}
+
+\newpage
+
+\subsection{Generated Worlds}
+\subsubsection{Basic show() predicate}
+This diagram is the result of "run show() for 5". It was generated to represent the differences between shared, booked and instant rides.
+\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{"myTaxiServiceImg/Alloy/alloyshow"}
+\end{figure}
+\newpage
+
+\subsubsection{showSharing() predicate}
+This diagram is the result of "run showSharing() for 5". It was generated to represent the relationship between shared and booked rides.
+\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{"myTaxiServiceImg/Alloy/alloysharing"}
+\end{figure}
+\newpage
+
+\subsubsection{showRides() predicate}
+This diagram is the result of "run showRides() for 5". It was generated to show the differences between booked and instant rides.
+\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{"myTaxiServiceImg/Alloy/alloyrides"}
+\end{figure}
+\newpage
