@@ -91,6 +91,7 @@
 				\caption{Driver's ride information page.}
 			\end{figure}
 			\newpage
+
 %\endsubsection
 \subsection{Functional Requirements}
 	After having stated the effective requirements for the system, we can start listing what a user can do.
@@ -135,14 +136,15 @@
 		Objective-C and Java.
 	\subsubsection {System Avaibility}
 		The service will be accesible online both via web and mobile-app. To achieve this we will use a Cloud Virtual Server provider. This will guarantee more scalability
-		for the system and can also reduce the cost that of a dedicated server. On top of that we can maintain high level performances even	in busy day.
+		for the system and can also reduce the cost that we would have with dedicated server. On top of that we can maintain high level performances even in busy days
 %\endsubsection
 \subsection {Security}
 	My Taxi Service implements a login authentication in order to protect user's sensible informations. Password must be 8 character long and must contain both letters
 	and numbers. Password will be encrypted and stored in the database with all user's data.
 
 	We guarantee that the user can't acces to other user sensible information.
-	At sign up the user will recive an email with a confirmation link to anable the acces to the advanced feature of our system.
+
+	At sign up the user will recive an email with a confirmation link to enable the acces to the advanced feature of our system.
 
 	We also implement a capcha control when you make an instant call, in order to prevent missclick or botnet attack.
 %\endsubsection

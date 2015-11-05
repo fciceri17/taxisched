@@ -55,6 +55,7 @@ Flow of events &
 			\item Surname
 			\item E-mail
 			\item Date of birth
+			\item Address
 			\item Password
 			\item Payament system $($optional$)$
 		\end {itemize}
@@ -110,7 +111,7 @@ Entry conditions & None\\
 \hline
 Flow of events &
 	\begin{itemize}
-		\item The User clicks on EDIT USER DATA button
+		\item The User clicks on SETTINGS button
 		\item The system shows the list of data that the User filled when he signed up
 		\item The User modifies the data
 		\item The User clicks on SAVE button
@@ -139,10 +140,11 @@ Entry conditions & None\\
 \hline
 Flow of events &
 	\begin{itemize}
-		\item The User either clicks on CALL A TAXI button or HOME button
+		\item The User either clicks on CALL ME A TAXI button or HOME button
 		\item The system shows the page used to call a taxi
 		\item The User chooses if insert an address or use his own position $($via GPS$)$
-		\item The User clicks on OK button
+		\item The User clicks on SEND ME A TAXI button
+		\item The User compile the captcha and confirm the call
 	\end{itemize}\\
 \hline
 Exit conditions & The system shows a confirmation message\\
@@ -180,7 +182,7 @@ Flow of events &
 			\item Departuring Time
 			\item An option to enable the Taxi Sharing
 		\end{itemize}
-		\item The User fills the fields and clicks OK button or select a similar ride from a pannel and join that ride
+		\item The User fills the fields and clicks BOOK IT button
 	\end{itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the data inserted by the User and updares its booking list\\
@@ -240,11 +242,9 @@ Flow of events &
 	\begin{itemize}
 			\item The User clicks on MY BOOKINGS button
 			\item The system shows a page with all the User's bookings
-			\item The User chooses a booking and clicks on STATUS button			
+			\item The User chooses a booking and clicks on STATUS button
 			\item The system shows a page with the reservation's information
-			\item The User clicks on MODIFY button
-			\item The System shows the page of the booking with the field filled when it was created
-			\item The User modifies the data and clicks on SAVE button
+			\item The User modifies the data and clicks on MODIFY button
 	\end{itemize}\\
 \hline
 Exit conditions & The system shows the confirmation page with the new data of the booking and updates its booking list\\
@@ -271,7 +271,7 @@ Flow of events &
 	\begin{itemize}
 		\item The User clicks on MY BOOKINGS button
 		\item The system shows a page with all the User's bookings
-		\item The User chooses a booking and clicks on STATUS button				
+		\item The User chooses a booking and clicks on STATUS button
 		\item The system shows a page with the reservation's information
 		\item The User clicks on CANCEL button
 		\item The System shows a page that ask the user to confirm the cancellation
@@ -333,9 +333,9 @@ Entry conditions & None\\
 \hline
 Flow of events &
 	\begin {itemize}
-		\item The Driver clicks on MODIFY WORKING STATE button
+		\item The Driver log in via app
 		\item The system shows a page with the current working state and, if the state is on "working", the amount of time the Driver has been working
-		\item The Driver clicks on SET WORKING or SET NOT WORKING button to set his situation
+		\item The Driver clicks on START WORKING or STOP WORKING button to set his situation
 		\item The system shows the working state page updated
 	\end {itemize}\\
 
