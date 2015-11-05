@@ -118,14 +118,12 @@ check NoMoreThanOneSharedComponent for 5
 //PREDICATES
 
 pred show(){
-
 #InstantRide>1
 #BookedRide>1
 #SharedRide>1
 #User>1
 #TaxiDriver>1
-#Place>1
-}
+#Place>1 }
 run show for 5
 
 //Pred to show the relationship between bookied rides, shared rides, places and drivers
@@ -137,23 +135,20 @@ pred showSharing(){
 #TaxiDriver > 1
 #InstantRide = 0
 #mainPassenger > 1
-}
+#Place > 1 }
 run showSharing for 5
 
 //Pred to show the relationship and the differencies between booked and instant rides
 pred showRides(){
 #BookedRide >1
 #InstantRide >1
-#SharedRide = 0
-}
+#SharedRide = 0 }
 run showRides for 5
 
 //Pred to assing a ride to a taxi driver
 pred assignRide (r: Ride, td: TaxiDriver){r.driver = td}
-
 run assignRide for 5
 
 //Pred to add a ride to a shared ride
 pred composeRide (br: BookedRide, sr: SharedRide) {br in sr.components and br.start in sr.itinerary and br.destination in sr.itinerary}
-
 run composeRide for 5
