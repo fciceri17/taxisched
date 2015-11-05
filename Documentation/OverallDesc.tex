@@ -1,6 +1,9 @@
 \section{Overall Descriptions}
 
 \subsection{Product Perspective}
+	
+	This section looks at all the necessary interfaces needed for the service to work properly.
+
 	\subsubsection{User Interfaces}
 		A home page, where you can instantly book a taxi, login and sign up. Upon logging in, according to the user type, 
 		you can access user-specific functionalities, listed in section 3.
@@ -15,13 +18,12 @@
 		An internet connection is required for all types of users of the application. 
 	\subsubsection{Memory Interfaces}
 		150MB of storage space for the application + cache when using the app.
-	
+		
 %\endsubsection
+\newpage
 \subsection{Product Functions}
-	\subsubsection{User Characteristics}
-		The user shall %TODO verify laws regarding taxis in Milan - age etc
 	\subsubsection{User Access and Registration}
-		Customer have the option of registering with the service. This must be done with email and password. Password recovery functions are available.
+		Customers have the option of registering with the service. This must be done with email and password. Password recovery functions are available.
 		This enables the reservation function. Unregistered users may still make use of the instant call function. \\
 		Being a registered user gives access to a personal page. Other than making reservations, user and payment data may be edited here. There should also
 		be an option that lets a user see a list of past reservations. \\
@@ -31,13 +33,15 @@
 		This is the most basic function of the application, and is available to all customers. The user supplies their position immediately and the order is 
 		sent to all nearby taxi drivers. %TODO add codes and time remaining etc
 	\subsubsection{Reservation}
-		This function is only available for registered users. The user inputs their desired date and time of departure, as well as the location, and their destination
+		This function is only available for registered users. The user inputs their desired date and time of departure, the location, their destination and the number of passengers.
 		Reservations have to be made, and eventually modified or cancelled, at least 2 hours before the start of the ride. However, even a reserved ride is treated like all other calls, and 
 		therefore is assigned to a taxi driver only 10 minutes before the start of the trip.
+
+\newpage
 	\subsubsection{Shared Taxi Function}
 		Ride sharing is an advanced option of the regular reservation function. When a user enables sharing, they are inserted into a queue for the shared ride
 		function. As soon as one request in the queue can be locked, the system scans the queue and creates an itinerary inserting as many possible shared 
-		requests into a single order. All participants in the order will be notified of the full itinerary, and their approximate pick-up time.
+		requests into a single order. All participants in the order will be notified of the full itinerary via email, and their approximate pick-up time.
 		When this request is sent to taxi drivers, they receive the full itinerary including all stops they have to make.\\
 		Note that shared rides can be split into dropping off and picking up different passengers during the same ride, as long as the fee each customer pays
 		is proportional to the length of the trip and the time travelled. 
@@ -47,12 +51,20 @@
 		receive the available offers. \\
 		When a driver accepts a ride, they are removed from the queue. Once they complete the ride, they notify the system by clicking the "ride complete" button,
 		which automatically reinserts them into the queue. If a rider refuses a ride, they are moved to the end of the queue. \\
-		Taxi drivers can also temporarily remove themselves from the queue when they pick up passengers the traditional way. When this happens, they are removed from
-		the queue. Pressing the "ride complete" button reinserts them into the queue.
+		Taxi drivers can also temporarily remove themselves from the queue when they pick up passengers the traditional way. When this happens, they use the "remove from queue" button.
+		This places them into a "ghost" ride within the application and removes them from the queue. Pressing the "ride complete" button reinserts them into the queue.
 	\subsubsection{Taxi Notification System}
 		Notifications for rides are sent to both the taxi driver and the customer. The mode in which a taxi driver interacts with notifications is described above. \\
-		Customers on the other hand receive a notification with an estimated arrival time when one of their orders is accepted. They also receive a notification
-		when their reservation becomes locked, which includes both simple reservations and shared rides. 
+		Customers on the other hand receive a notification with an estimated arrival time when one of their orders is accepted. 
+
+\newpage
+	\subsubsection{Queue System}
+		The taxi queue is handled automatically by the system. Every time a driver sets their status to working or every time they end a ride, they are automatically added to the end of the queue.
+		Setting the working status to not working or using the remove from queue function removes a driver from the queue. The system uses a single queue for all taxis. The queue is built using a FIFO model,
+		but is filtered by proximity. Every time a customer is found, the system looks for the closest drivers, in increasing distance intervals. As soon as a driver is found, the offer is proposed to them. 
+		If a driver refuses, he is moved to the end of the queue and the ride is proposed to the next driver in the queue. If the driver accepts, he is removed from the queue.
+		
+	
 %\endsubsection
 \subsection{Constraints}
 	\subsubsection{Regulatory policies}
@@ -65,9 +77,11 @@
 		myTaxiService doesn’t have to interfaces with any other applications.
 	\subsubsection{Parallel operation}
 		The service shall be able to function independent of how many users may be using the application at any time.
+
+\newpage
 	\subsubsection{Safety and Security Considerations}
 		Due to privacy issues, the identity of customers shall be protected at all stages. Therefore, the identity of customers going on shared
-		rides shall not know the identity of other customers ahead of time. Also, when accessing logs via the web interface, the database shall never
+		rides shall not be known other customers ahead of time. Also, when accessing logs via the web interface, the database shall never
 		return information about customers different from the one requesting it.
 %\endsubsection
 \subsection{Assumptions}
@@ -80,11 +94,13 @@ We assume that:
 	\item A Taxi Driver may pick up passengers who are not using the app. Doing so temporarily removes them from the queue.
 	\item Each Taxi has a unique code assigned to it.
 	\item Each customer will create at most one account.
-	\item Taxi drivers take no longer than 10 minutes to reach the customer.s
+	\item Taxi drivers take no longer than 10 minutes to reach the customers.
 	\item All the taxis in the city have the same number of seats. A customer inserts the number of seats he needs, then the system calculates the required number of taxis.
 	\item In the city there are enough taxis to satisfy every call. There won't be any customer that will have to wait for his taxi more than the established time. 
 \end{itemize}
 %\endsubsection 
+
+\newpage
 \subsection{Scenarios}
 	\begin{description}
 		\item{\textbf{Scenario 1: User Registration and Login}}\\
@@ -93,12 +109,14 @@ We assume that:
 			credit card information on the site and is now ready to make a reservation. \\
 		\item{\textbf{Scenario 2: Unregistered User Basic Call}} \\
 			\${}USER has recently installed the application, but has not been registered with the service yet. Needing a taxi immediately, \${}USER clicks the "instant call" button and inputs his current
-			location. As soon as a driver has accepted the call, \${}USER sees an estimate of the time remaining until the taxi reaches him. Once the taxi reaches him, the \${}USER 's trip starts.
+			location. As soon as a driver has accepted the call, \${}USER sees an estimate of the time remaining until the taxi reaches him. Once the taxi reaches him, \${}USER's trip starts. \\
 		\item{\textbf{Scenario 3: Basic Reservation}} \\
 			\${}USER is a registered customer of the service. \${}USER logs into the service's website, and selects the "reservation" option. \${}USER inserts the date and time when he wishes to be picked
 			up. The day of the reservation comes, and 2 hours before the specified time, \${}USER 's order is locked, and a notification is sent to \${}USER. 10 minutes before the start of \${}USER 's trip, 
 			his reservation is inserted into the queue. As soon as the order is accepted, \${}USER receives another notification, with information concerning when the taxi driver will reach him, as well
-			as the taxi's code. \${}USER is picked up by the taxi and the taxi 
+			as the taxi's code. \${}USER is picked up by the taxi and the taxi takes \${}USER to his destination. Payment can be made either via the methods offered by the service or in cash. \\
+
+\newpage
 		\item{\textbf{Scenario 4: Sharing Reservation}} \\
 			\${}USER1 wants to make a reservation for a taxi on monday around lunchtime, to go to the airport with a work colleague. \${}USER1 and his colleague don't mind sharing the taxi with someone else if the fee is reduced
 			by sharing. Being a registered user, \${}USER1 reserves a taxi for 2 from his workplace to the airport, enabling the sharing option. and setting the time to 12:30, aiming to reach the airport by 13:15.\\
@@ -107,14 +125,16 @@ We assume that:
 			Monday comes around, and at 10:30, the system locks \${}USER1's reservation. Seeing that \${}USER2 has a compatible request, the system automatically locks \${}USER2's order as well. Both users are notified of their full
 			itinerary. 12:20 rolls around, and the order is automatically queued into the system. A taxi driver accepts the order, knowing the trip he needs to make all the way to the airport including the pick-up at 13:00, and picks up \${}USER1
 			and his colleague from their workplace. The taxi then reaches \${}USER2's home at 13:00 and picks him up as well. Once the three passengers are delivered to the airport, fees are split accordingly; \${}USER1 pays the full trip from
-			the workplace to \${}USER2's home and 2/3 of the trip from \${}USER2's home to the airport, while \${}USER2 pays for the remainder.
+			the workplace to \${}USER2's home and 2/3 of the trip from \${}USER2's home to the airport, while \${}USER2 pays for the remainder. \\
 		\item{\textbf{Scenario 5: Taxi Driver Accepting an Offer}} \\
 			\${}DRIVER1 logs into the application and selects the "start working" option. Immediately, he is inserted into the queue. After a few minutes, \${}DRIVER1 receives the notification of an available
 			ride nearby. The customer is only 2 minutes from where \${}DRIVER1 currently is, and therefore he accepts the offer. \${}DRIVER1 picks up the customer and takes him to his destination. After being paid, \${}DRIVER1 clicks the "end of ride"
-			button and is reinserted into the queue.
+			button and is reinserted into the queue. \\
+
+\newpage
 		\item{\textbf{Scenario 6: Taxi Driver in Queue Picking up a Regular Passenger}} \\
 			\${}DRIVER1 is in the application queue waiting on an offer. As he drives around, he encounters a pedestrian requesting a taxi. \${}DRIVER1 selects the "remove from queue" option in the application, and therefore leaves the queue. After picking
-			up the passenger, he takes the passenger to his destination. Once the passenger reaches the destination and pays for the ride, \${}DRIVER1 click the "end of ride" button and is reinserted at the end of the queue. 
+			up the passenger, he takes the passenger to his destination. Once the passenger reaches the destination and pays for the ride, \${}DRIVER1 click the "end of ride" button and is reinserted at the end of the queue. \\
 		\item{\textbf{Scenario 7: Taxi Driver Refusal and Acceptance of a Shared Ride offer}} \\
 			\${}DRIVER1 and \${}DRIVER2 are the first two in the queue for the city center. \${}DRIVER1 receives an offer for a shared ride like that in scenario 4. \${}DRIVER1 however doesn't want to travel all the way to the airport, and since the queue
 			in the city center is never very long, refuses the offer, and gets placed at the end of the queue. \\

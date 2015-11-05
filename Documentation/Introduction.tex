@@ -12,7 +12,7 @@
 			\item[Client-Side] \hfill
 				\begin{itemize}
 					\item A mobile application for customers
-					\item A web interface for customers and drivers to access the service
+					\item A web interface for customers to access the service
 					\item A mobile application for taxi drivers to interact with calls.
 				\end{itemize}
 			\item[Server-Side] \hfill
@@ -26,6 +26,9 @@
 		first, and can then access authenticated user functions. These include for example being able to book a taxi for a future date.\\
 		When booking taxis, a registered user may enable ride-sharing. Ride-sharing queues up a customer's ride into the system, which will handle merging multiple requests into
 		a single unified ride, which shall only marginally alter each single request by a small amount, determined by some predefined parameters.\\
+		
+		
+		\newpage
 		Authenticated users can also modify their already booked rides, as well as cancel them within a time frame of 2 hours from the start of their ride, and also modify
 		their personal and payment information.\\
 		Taxi drivers will have an interface which allows them to communicate when they start and stop working(being available), and the menu to accept or refuse a 
@@ -34,7 +37,7 @@
 		on the taxi coming to pick them up,	as well as provide an estimate of the time remaining before the start of their ride.
 	%\endsubsubsection
 	\subsubsection{Applications}
-		This service is intended to simplify the process of acquiring a taxi in X. It should remove the need of a human operator
+		This service is intended to simplify the process of acquiring a taxi in X. It should remove the need for a human operator
 	%\endsubsubsection
 	\subsubsection{Goals}
 		The service should allow customers to do the following things:
@@ -42,12 +45,14 @@
 		\item Allow a customer to get a taxi instantly, much like dialing the taxi number in any city
 		\item Allow a customer, after registration, to book a taxi for a specific date and time
 		\item Allow registered users to automatically share rides with each other, through an automatic queueing system
+		\item Allow user to view their reservations and cancel them
 		\item Allow taxi drivers to accept rides both through the application and externally in a seamless manner
 		\item Assign taxi drivers to customers automatically 
 		\end{enumerate}
 			
 	%\endsubsubsection
 %\endsubsection   
+\newpage
 \subsection{Definitions}
 	\begin{description}
 		\item[Guest]
@@ -77,7 +82,7 @@
 	back-end infrastructure operates. 
 	\item Requirements, a section that analyses what is going to be required to make the actual application work.
 	\item UML, where UML diagrams show the way user functions operate, as well as how the app shall be structured.
-	\item Alloy, where \askpippo
+	\item Alloy, where Alloy Analyzer is used to specify properties and limitations of the application.
 	\end{enumerate}
 %\endsubsection
 
