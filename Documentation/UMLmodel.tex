@@ -1,16 +1,23 @@
 \section{UML Models}
 
 \subsection{Use Case Diagram}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.85\textheight]{myTaxiServiceImg/UseCase/OverallUseCase.jpg}
+	\end{figure}
+%\endsubsection
+\newpage
+
+\subsection{Use Cases}
 These are the use cases which are part of the service
 \begin{itemize}
 	\item Sign up
 	\item Log in
 	\item Edit user data
-	\item Instant ride
+	\item Instant call
 	\item Booking ride
 	\item Edit booking
 	\item Cancel booking
-	\item View status and accept sharing
 	\item View past rides
 	\item Set working condition
 	\item Notify end of a ride
@@ -20,20 +27,15 @@ These are the use cases which are part of the service
 
 \end{itemize}
 
-%-------------------------------------------------------
-%Use case
-%-------------------------------------------------------
 
 %\endsubsection
-\subsection{Use Case Description}
-These are the detailed descriptions of the Use Cases listed and shown before
-\begin{Huge} da sistemare
-\end{Huge}
-
 
 \newpage
-"Sign up" case:
-\\
+\subsection{Use Case Description}
+These are the detailed descriptions of the Use Cases listed and shown before
+
+\subsubsection{"Sign up" case:}
+\hfill \\
 \\
 \begin {tabular} {|p{3cm}|p{10cm}|}
 \hline
@@ -66,47 +68,8 @@ Exceptions & The guest inserts the wrong email/password combination, the email i
 \end {tabular}
 
 \newpage
-\askpippo\\
-"Taxi driver sign up" case:
-\\
-\\
-\begin {tabular} {|p{3cm}|p{10cm}|}
-\hline
-Name & Taxi drver sign up\\
-\hline
-Actor & Guest\\
-\hline
-Entry conditions & None\\
-\hline
-Flow of events &
-	\begin {itemize}
-		\item The guest enters the website
-		\item The guest clicks the taxi drver signup button in the bottom of the page
-		\item The guest fills the following fields:
-		\begin {itemize}
-			\item Name
-			\item Surname
-			\item E-mail
-			\item Date of birth
-			\item Password
-			\item Driver license
-			\item Licence plate
-			\item Taxi license
-		\end {itemize}
-		\item The Guest clicks on CONFIRM button
-	\end {itemize}\\
-\hline
-Exit conditions & The system shows the home page personalized with the user credential and updates its database.\\
-\hline
-Exceptions & The guest inserts the wrong email/password combination, the email is already registered in the system, does not matches his profile with the taxi
-code in the database or some fields are empthy.\\
-\hline
-\end {tabular}
-
-
-\newpage
-"Log in" case:
-\\
+\subsubsection{"Log in" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -127,17 +90,21 @@ Exit conditions & The system shows the home page personalized with the user cred
 Exceptions & The guest inserts the wrong email/password combination or the email is not registered in the system\\
 \hline
 \end {tabular}
-
+\newpage
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=0.85\textheight]{"myTaxiServiceImg/SequenceDiagram/Log In"}
+\end{figure}
 
 \newpage
-"Edit user's data" case:
-\\
+\subsubsection{"Edit user's data" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
 Name & Edit user's data\\
 \hline
-Actor & User and Taxi driver\\
+Actor & User\\
 \hline
 Entry conditions & None\\
 \hline
@@ -159,8 +126,8 @@ Exceptions & The guest inserts wrong new data or doesn't fill all the required f
 
 
 \newpage
-"Instant ride" case:
-\\
+\subsubsection{"Instant call" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -184,14 +151,19 @@ Exceptions & None\\
 \hline
 \end {tabular}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=0.4\textheight]{"myTaxiServiceImg/SequenceDiagram/Instant Ride Call"}
+\end{figure}
+
 
 \newpage
-"Booking ride" case:
-\\
+\subsubsection{"Book a ride" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
-Name & Booking ride\\
+Name & Book a ride\\
 \hline
 Actor & User\\
 \hline
@@ -217,10 +189,44 @@ Exceptions & The guest inserts wrong new data like an impossible hour\\
 \hline
 \end {tabular}
 
+\newpage
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.95\textwidth]{"myTaxiServiceImg/SequenceDiagram/Book a ride"}
+\end{figure}
+
 
 \newpage
-"Edit Booking" case:
+\subsubsection{"View status" case:}
+\hfill \\
 \\
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+Name & View status\\
+\hline
+Actor & User\\
+\hline
+Entry conditions & The User must have booked at least one ride\\
+\hline
+Flow of events &
+	\begin{itemize}
+			\item The User clicks on MY BOOKINGS button
+			\item The system shows a page with all the User's bookings
+			\item The User chooses a shared ride and clicks on STATUS button
+			\item The system shows a page with the sharing situation
+	\end{itemize}\\
+\hline
+Exit conditions & The system shows again the User's booking page\\
+\hline
+Exceptions & None\\
+\hline
+\end {tabular}
+
+\newpage
+
+\subsubsection{"Edit Booking" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -234,7 +240,9 @@ Flow of events &
 	\begin{itemize}
 			\item The User clicks on MY BOOKINGS button
 			\item The system shows a page with all the User's bookings
-			\item The User chooses a booking and clicks on MODIFY button
+			\item The User chooses a booking and clicks on STATUS button			
+			\item The system shows a page with the reservation's information
+			\item The User clicks on MODIFY button
 			\item The System shows the page of the booking with the field filled when it was created
 			\item The User modifies the data and clicks on SAVE button
 	\end{itemize}\\
@@ -246,9 +254,10 @@ Exceptions & The User inserts wrong data like an hour to close to that moment\\
 \hline
 \end {tabular}
 
+
 \newpage
-"Cancel Booking" case:
-\\
+\subsubsection{"Cancel Booking" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -262,7 +271,9 @@ Flow of events &
 	\begin{itemize}
 		\item The User clicks on MY BOOKINGS button
 		\item The system shows a page with all the User's bookings
-		\item The User chooses a booking and clicks on CANCEL button
+		\item The User chooses a booking and clicks on STATUS button				
+		\item The system shows a page with the reservation's information
+		\item The User clicks on CANCEL button
 		\item The System shows a page that ask the user to confirm the cancellation
 		\item The User clicks the OK button
 	\end{itemize}\\
@@ -273,37 +284,18 @@ Exceptions & The User tries to cancel a booking that has a departure hour that i
 \hline
 \end {tabular}
 
-\newpage
-"View status and accept sharing" case:
-\\
-\\
-$[$ non so come farla nei mockup$]$\askpippo\\
-\begin{tabular}{|p{3cm}|p{10cm}|}
-\hline
-Name & View status and accept sharing\\
-\hline
-Actor & User\\
-\hline
-Entry conditions & The User must have booked at least one ride with the sharing option\\
-\hline
-Flow of events &
-	\begin{itemize}
-			\item The User clicks on MY BOOKINGS button
-			\item The system shows a page with all the User's bookings
-			\item The User chooses a shared ride and clicks on STATUS button
-			\item The system shows a page with the sharing situation
-			\item The User can accept or refuse a adviced sharing clicking on ACCEPT or REFUSE buttons
-	\end{itemize}\\
-\hline
-Exit conditions & The system shows again the User's booking page\\
-\hline
-Exceptions & None\\
-\hline
-\end {tabular}
 
 \newpage
-"View past rides" case:
-\\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=0.95\textheight]{"myTaxiServiceImg/SequenceDiagram/Edit or cancel a booking"}
+\end{figure}
+
+
+\newpage
+\subsubsection{"View past rides" case:}
+\hfill \\
 \\
 \begin{tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -328,8 +320,8 @@ Exceptions & None\\
 \end {tabular}
 
 \newpage
-"Set Working Condition" case:
-\\
+\subsubsection{"Set Working Condition" case:}
+\hfill \\
 \\
 \begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -357,8 +349,8 @@ Exceptions & None\\
 
 \newpage
 
-"Accept or refuse a job" case:
-\\
+\subsubsection{"Accept or refuse a job" case:}
+\hfill \\
 \\
 \begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -384,9 +376,14 @@ Exceptions & None\\
 
 
 \newpage
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=0.95\textheight]{"myTaxiServiceImg/SequenceDiagram/Edit or cancel a booking"}
+\end{figure}
+\newpage
 
-"Notify the end of a ride" case:
-\\
+\subsubsection{"Notify the end of a ride" case:}
+\hfill \\
 \\
 \begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -410,11 +407,14 @@ Exit conditions & The system add the Driver to the queue\\
 Exceptions & None\\
 \hline
 \end {tabular}
-
-\newpage
-
-"Log Out" case:
 \\
+\\
+\\
+\\
+\\
+
+\subsubsection{"Log Out" case:}
+\hfill \\
 \\
 \begin {tabular}{|p{3cm}|p{10cm}|}
 \hline
@@ -440,3 +440,32 @@ Exceptions & None\\
 
 %\endsubsection
 
+\subsection{State Charts}
+
+
+\subsubsection{Reservation}
+
+This statechart describes the status of a reservation from creation to completion
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.75\textheight]{"myTaxiServiceImg/SequenceDiagram/Booking"}
+	\end{figure}
+
+\newpage
+\subsubsection{Driver Status}
+
+This statechart follows the status of a Taxi Driver throughout the workday
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.85\textheight]{"myTaxiServiceImg/SequenceDiagram/Driver Status"}
+	\end{figure}
+
+\newpage
+\subsection{UML Class Diagram}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.75\textheight]{"myTaxiServiceImg/SequenceDiagram/myTaxiServiceUMLjpeg"}
+	\end{figure}
+%\endsubsection
