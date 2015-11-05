@@ -29,6 +29,8 @@ sig User{
 sig TaxiDriver{
 }
 
+
+
 //FACTS
 
 //depTime can't be negative
@@ -52,6 +54,8 @@ fact NewReservation{
 //A User can't make more than one reservation in a certain period of time
 no disj br1, br2: BookedRide | (br1.mainPassenger = br2.mainPassenger and !(br1.depTime-br2.depTime < 30 and br2.depTime-br1.depTime < 30))
 }
+
+
 
 fact RideBounds{
 //
@@ -133,7 +137,6 @@ pred showSharing(){
 #TaxiDriver > 1
 #InstantRide = 0
 #mainPassenger > 1
-#Place > 1
 }
 run showSharing for 5
 
