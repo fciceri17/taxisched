@@ -1,19 +1,24 @@
 \section{Requirements}
-	\subsection {Unregisterd User Requiremets}
+	\subsection {Guest Requiremets}
 		\subsubsection {System Registration}
 			The system needs to enable sign up for new users. This will unlock the user, after a login, the access to the advanced features.
-			\begin{figure}[h]
-				\includegraphics[width=0.9\textwidth]{signup.png}
-				\caption{Those mockup show the registration form via web and mobile app.}
-			\end{figure}
+			\begin {figure}[h!]
+				\includegraphics [width=0.6\textwidth, width=6cm]{signup}
+				\caption {\askpippo}
+			\end {figure}
 			\newpage
 		\subsubsection {User Login}
 		 	The system must provide an authentication system that enable the access to advanced features.
+		 	\begin{figure}[h!]
+				\includegraphics[width=0.6\textwidth]{home}
+				\caption{\askpippo.}
+			\end{figure}
+			\newpage
 		\subsubsection {Instant Calls}
 			The system must let unregistered user call a taxi immediately.
 			\begin{figure}[h!]
 				\includegraphics[width=0.6\textwidth]{home}
-				\caption{In the home page user can easily call a taxi.}
+				\caption{\askpippo.}
 			\end{figure}
 			\newpage
 	\subsection {Registered User Requirements}
@@ -53,8 +58,37 @@
 				\caption{Ride editing form.}
 			\end{figure}
 			\newpage
-
-
+	\subsection {Taxi Driver Requirements}
+		The worker queue must be handled automatically by the system. This includes building a queue dynamically using a FIFO model. The system
+		must also provide a mobile app for the driver to get acces to \askpippo
+		\subsubsection {Driver Login}
+		 	The system must provide a driver's authentication system that enable the driver to acces his feature.
+		 	\begin{figure}[h!]
+				\includegraphics[width=0.6\textwidth, width=3cm]{driverlogin}
+				\caption{Driver's log in interface.}
+			\end{figure}
+			\newpage
+		\subsubsection {Driver Work Settings}
+		 	The system must provide the driver the acces to his working condition.
+		 	\begin{figure}[h!]
+				\includegraphics[width=0.6\textwidth, width=3cm]{appdriverlogged}
+				\caption{Driver's home page.}
+			\end{figure}
+			\newpage
+		\subsubsection {Driver Ride Acceptance}
+			The system must provide the driver to accept or refuse a ride.
+		 	\begin{figure}[h!]
+				\includegraphics[width=0.6\textwidth, width=3cm]{appdrivernew}
+				\caption{Driver's ride information page.}
+			\end{figure}
+			\newpage
+		\subsubsection {Driver Ride Settings}
+			The system must provide the driver to know the ride information and eh comand to end it, and be reinserted \askpippo in the queue.
+		 	\begin{figure}[h!]
+				\includegraphics[width=0.6\textwidth, width=3cm]{appdriveron}
+				\caption{Driver's ride information page.}
+			\end{figure}
+			\newpage
 
 
 \begin{description}
@@ -84,6 +118,7 @@
 				\item A driver refusing a ride should be moved to the end of the queue.
 				\item A driver set to not working shall be removed from the queue.
 			\end{itemize}
+
 \end{description}
 \newpage
 \subsection{Functional Requirements}
