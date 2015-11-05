@@ -85,7 +85,7 @@
 			\end{figure}
 			\newpage
 		\subsubsection {Driver Ride Settings}
-			The system must provide the driver to know the ride information and eh comand to end it, and be reinserted \askpippo in the queue.
+			The system must provide the driver information on the ride and a command to end it, and a function that automatically reinserts into the queue.
 		 	\begin{figure}[h!]
 				\includegraphics[width=0.6\textwidth, width=3cm]{mockup/appdriveron}
 				\caption{Driver's ride information page.}
@@ -135,12 +135,11 @@
 		Objective-C and Java.
 	\subsubsection {System Avaibility}
 		The service will be accesible online both via web and mobile-app. To achieve this we will use a Cloud Virtual Server provider. This will guarantee more scalability
-		to our system and can also reduce the cost that we would have with a dadicated server. On top of that we can mantaing \askpippo high level performances even
-		in busy day.
+		for the system and can also reduce the cost that of a dedicated server. On top of that we can maintain high level performances even	in busy day.
 %\endsubsection
 \subsection {Security}
-	My Taxi Service implements a login authentication in order to protect user's sensible informations. Password must be 8 character long with both letters
-	 and numbers\askpippo. Password will be encrypted and stored in the database with all user's data.
+	My Taxi Service implements a login authentication in order to protect user's sensible informations. Password must be 8 character long and must contain both letters
+	and numbers. Password will be encrypted and stored in the database with all user's data.
 
 	We guarantee that the user can't acces to other user sensible information.
 	At sign up the user will recive an email with a confirmation link to anable the acces to the advanced feature of our system.
