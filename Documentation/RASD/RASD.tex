@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{graphicx} %package to manage images
+%\graphicspath{ {mockup/} }
+
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}  % @deprecated
+\newcommand{\tabtratt}{~~\thinspace\thinspace{\textendash}~~} % @deprecated
+\newcommand{\askpippo}{~~{\Huge $($?$)$}~~} % Need HELP here
+\newcommand{\finishthis}{~~{\Huge Complete from here\\}~~} % To be continued...from here
+
+\title{RASD - myTaxiService}
+\author{
+	Ciceri, Filippo \\
+	\texttt{filippo.ciceri@mail.polimi.it}
+	\and
+	Cesaro, Federico \\
+	\texttt{federico.cesaroi@mail.polimi.it}
+	\and
+	Capecchi, Luca \\
+	\texttt{luca.capecchi@mail.polimi.it}
+}
+\date{October 2015}
+
+\pagestyle{headings}
+
+%end preamble
+
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=8cm]{../polimiLogo}\par\vspace{2cm}
+	{\scshape\huge\bfseries RASD - myTaxiService \par}
+	\vspace{1.5cm}
+	{\scshape\large Ciceri, Filippo \par}
+	{\scshape\normalsize filippo.ciceri@mail.polimi.it \par}
+	\vspace{0.5cm}
+	{\scshape\large Cesaro, Federico \par}
+	{\scshape\normalsize federico.cesaroi@mail.polimi.it \par}
+	\vspace{0.5cm}
+	{\scshape\large Capecchi, Luca \par}
+	{\scshape\normalsize luca.capecchi@mail.polimi.it \par}
+	\vspace{0.5cm}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\newpage
+\input{Introduction.tex}
+
+\newpage
+\input{OverallDesc.tex}
+
+\newpage
+\input{Requirements.tex}
+
+\newpage
+\input{UMLmodel.tex}
+
+\newpage
+\input{Alloy.tex}
+
+\newpage
+\input{Appendix.tex}
+
+
+\end{document}

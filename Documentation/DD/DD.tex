@@ -5,7 +5,6 @@
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{graphicx} %package to manage images
-%\graphicspath{ {mockup/} }
 
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}  % @deprecated
@@ -13,7 +12,7 @@
 \newcommand{\askpippo}{~~{\Huge $($?$)$}~~} % Need HELP here
 \newcommand{\finishthis}{~~{\Huge Complete from here\\}~~} % To be continued...from here
 
-\title{RASD - myTaxiService}
+\title{Design Document - myTaxiService}
 \author{
 	Ciceri, Filippo \\
 	\texttt{filippo.ciceri@mail.polimi.it}
@@ -24,7 +23,7 @@
 	Capecchi, Luca \\
 	\texttt{luca.capecchi@mail.polimi.it}
 }
-\date{October 2015}
+\date{November 2015}
 
 \pagestyle{headings}
 
@@ -34,8 +33,8 @@
 \begin{document}
 \begin{titlepage}
 	\centering
-	\includegraphics[width=8cm]{polimiLogo}\par\vspace{2cm}
-	{\scshape\huge\bfseries RASD - myTaxiService \par}
+	\includegraphics[width=8cm]{../polimiLogo}\par\vspace{2cm}
+	{\scshape\huge\bfseries Design Document - myTaxiService \par}
 	\vspace{1.5cm}
 	{\scshape\large Ciceri, Filippo \par}
 	{\scshape\normalsize filippo.ciceri@mail.polimi.it \par}
@@ -59,16 +58,16 @@
 \input{Introduction.tex}
 
 \newpage
-\input{OverallDesc.tex}
+\input{Arch.tex}
 
 \newpage
-\input{Requirements.tex}
+\input{Algo.tex}
 
 \newpage
-\input{UMLmodel.tex}
+\input{UX.tex}
 
 \newpage
-\input{Alloy.tex}
+\input{Req.tex}
 
 \newpage
 \input{Appendix.tex}
