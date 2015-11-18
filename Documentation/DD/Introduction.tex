@@ -1,10 +1,33 @@
 \section{Introduction}
 
 \subsection{Purpose}
-
+	This DD is a specification document intended to outline the design choices being made to implement "myTaxiService". This includes a detailed component view, information about 
+	patterns used and stylistic choices, a description of the algorithms to be used and an overview of the UI. These specifications are for the developers that will be writing the code
+	for the service.
 \subsection{Scope}
-
+	This service will require the development of the following:
+	\begin{description}
+		\item[Client-Side] \hfill
+			\begin{itemize}
+				\item A mobile application for customers
+				\item A web interface for customers to access the service
+				\item A mobile application for taxi drivers to interact with calls.
+			\end{itemize}
+		\item[Server-Side] \hfill
+			\begin{itemize}
+				\item A server application that handles live queues
+				\item A database that stores user data, including credentials
+				\item Another database that handles Registered user rides, memorizing both booked rides and past itineraries
+			\end{itemize}
+	\end{description}
 \subsection{Definition, Acronyms and Abbreviations}
 
 \subsection{Document Structure}
-
+	The remainder of the document is divided into the following sections:
+	\begin{enumerate}
+	\item The introduction, which contains basic information on how the service works
+	\item Architectural description, where the components of the service are described, along with the different views, the stylistic choices and the design choices taken. 
+	\item Algorithm design, the section where a basic description of the algorithms being used is given.
+	\item UX, the section concerning the UI design choices accompanied by some mockups.
+	\item Requirements traceability, where requirement from the RASD are mapped to the specifications within this document.
+	\end{enumerate}
