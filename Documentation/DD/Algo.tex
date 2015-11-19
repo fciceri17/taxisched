@@ -1,6 +1,65 @@
 \section{Algorithm Design}
 
 \subsection{Taxi queueing system}
-	The taxi queue algorithm is responsible for the
-\subsection{Shared ride creation system}
+	The taxi queue algorithm is responsible for the assignment of taxi jobs to drivers. 
+	\subsubsection{Insertion and Removal}
+		Taxi drivers can be inserted into the queue in 2 ways, either by starting their work period or by finishing their current job. In both cases, insertion is made at the end of 
+		the queue. Due to the nature of the queue, memorizing the time of entry and exit into the queue is not necessary, since the order is enough to determine the assignment
+		priority. \\
+		Drivers may be removed from the queue by either selecting to stop working or by accepting a job. After having accepted a job, the drivers doesn't have to worry about queueing
+		up again until the end of the trip. At that point, the driver can select the end of ride function within the application to be reinserted in the queue.\\
+	\subsubsection{Insertion of Jobs into the Queue}
+		There are different types of jobs that can be inserted into the queue. Currently we divide them in 3 types:
+		\begin{itemize}
+		\item Regular "instant calls", the most basic type of ride. These are more or less equivalent to calling the taxi through a phone. These offers are immediately assigned to the
+		first taxi in the queue to accept them. More information about assigning the offers can be found in the next paragraph.
+		\item Single order reservations, which are locked two hours before they are supposed to take place. Ten minutes before the reservation is scheduled, the offer is inserted into the
+		queue and is assigned to a driver. When this offer is sent to the drivers, all details specified during the booking process are revealed to the driver, information like the number
+		of passengers, the destination if specified, etc.....
+		\item Shared ride reservations, which, much like single order reservations, are locked two hours before taking place. Since itineraries for these types of jobs are very important 
+		regarding the nature of the ride, all details are sent to the driver. This includes all stops the driver has to make, the number of people being picked up at each stop, and an estimate
+		of the amount of money the driver is going to receive. 
+		\end{itemize}
+	\subsubsection{Assignment of Passengers to Taxis}
+		To allow a fair management of the queue, two things have to be taken into account when assigning passengers to taxis:
+		\begin{itemize}
+		\item Time - the time a taxi driver has been in the queue, which should give priority to a driver over another.
+		\item Proximity - the distance a taxi driver is from the passenger they are supposed to be picking up.
+		\end{itemize}
+		To respect these factors, the system has to mix them into the assignment algorithm.\\
+		\begin{enumerate}
+		\item The system finds the position of the passenger, and plots it into a coordinate plane, setting the passenger's position as the origin.
+		\item The system looks for taxis within a certain range of the passenger. Ideally this number is between 500m and 1km.
+		\item If the system finds at least 5 taxis within range, it moves to the next step. Otherwise, the system increments the maximum distance until at least  %TODO EXPLAIN 5
+		the minimum number of taxis is found in range.
+		\item At this point, the system sorts the drivers found by their position in the queue. It starts by sending the offer to the first driver. At this point the driver may either
+		accept or refuse. In case of refusal, the system sends the request to the next taxi. This process continues until someone accepts the offer or until all "eligible" drivers have refused.
+		If the offer has still not been taken. The system goes back to the second step, looking for new drivers by incrementing the distance again. Note that at this point drivers that have already
+		refused the ride will not be sent the offer again, since they have already been on the assignment list. The process continues until one driver accepts the offer.
+		\end{enumerate}
+	\subsubsection{Movement in the queue}
+		The queue has to guarantee a fair assignment of passengers to drivers. Therefore, the queue has to change as little as possible. There are only 3 methods by which the queue changes
+		Two of these have been described above(insertion and removal). The third method involves refusing a job offer. When a ride is assigned to a driver, the driver has a short time frame to
+		accept or refuse the job. Refusing the ride results
 		
+\newpage
+\subsection{Shared ride creation system}
+	\subsubsection{Structure of Shared rides}
+		Shared rides are composed by a single itinerary, which includes all stops a taxi makes on a route, and by a set of individual reservations, each referring to a separate order.
+		The itinerary has to include the starting point and destination of each sub-ride, and must be structured in a way that at no point in time the number of passengers on the taxi is greater than
+		the number of seats in the taxi.\\
+	\subsection{Composition of Rides}
+		A ride is created on a need basis. Before being assigned to a ride, all shared-ride orders are only seen as requests in the system, but do not correspond to an actual job order.
+		The order is only created when a ride has to be locked.\\
+		When a ride is supposed to be logged, the system computes the best possible shared ride for the selected order. Shared rides need to consider three things mainly:
+		\begin{itemize}
+		\item The gain of the passenger - Is the shared order netting high enough savings to a passenger to justify sharing the ride. This refers not only to the money being saved, but
+		also the time being "lost" vs a regular ride.
+		\item The length of the ride. Since the shared ride can theoretically exist as a combination of multiple rides, it is important that the ride is not too long, so there must be an upper limit
+		to the total estimated sum of the duration of a ride.
+		\item The number of rides included into the shared ride - since a shared ride is the sum of multiple sub-rides, it is crucial that the system maps the trip accordingly. For example, the algorithm
+		should never produce a ride composed of 10 consequent short rides, to the point where it would almost feel like a bus ride.
+		\end{itemize}
+		Keeping in mind these criteria, the algorithm shall behave as shown below:
+		
+		STATE CHART DIAGRAM HERE
