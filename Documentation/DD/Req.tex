@@ -1,16 +1,22 @@
 \section{Requirements Traceability}
-	\subsection {Unregisterd User Requiremets}
+	\subsection {Log In, Sign Up and Data Editing}
 
 		\subsubsection{System Registration}
-		The Sign Up function is implemented by the ClientManager. Using the User Access interface that has the method PARLACOLDB that comunicates with the UserDataManager and saves the new User's data.
+		The Sign Up function is implemented by the ClientManager. Using the User Access interface, that has the method PARLACOLDB, it comunicates with the UserDataManager and saves the new User's data.
+		
 		\subsubsection{User LogIn}
-		\subsubsection{Instant Calls}
+		The LogIn is performed by the ClientManager that, as in the Sign Up, communicates with the UserDataManager through the User Access Interface. Here the AuthManager verifies the correspondance between the info inserted by the Customer and the ones stored in the DataBase using the DBAccess Interface with the method ÈGIUSTOONO and answers to the ClientManager.
 		
+		\subsubsection{User edit information}
+		Similarly to the LogIn function the ClientManager communicates with the Data Manager. Here the Profile Editor, through the DBAccess Interface's method CAMBIADATI updates the User's data.
 		
+		\newpage
 	\subsection {Registered User Requirements}
 	
-		\subsubsection{User edit information}
+		
 		\subsubsection{Instant Calls}
+		This function is implemented by the Ride Controller, that recieved a request from a Client, creates a Ride, looks for Taxi Drivers that may accept the jobs and reports it to them. \askpippo
+		
 		\subsubsection{Booking and Sharing}
 		\subsubsection{Booking History}
 		\subsubsection{Booking Editing}
