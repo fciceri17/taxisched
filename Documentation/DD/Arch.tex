@@ -49,11 +49,11 @@
 
 \subsection{Runtime View}
 	\subsubsection{Sequence Diagram}
-		\paragraph{Log In}
+	In this section we show some service provided by our system to better understand how they work.
+			\paragraph{Log In}
 			In order to Log In the guest must: \begin{itemize}
 				\item Open the service.
 				\item Fill the fields with is account data.
-				\item Click the Log In button.
 			\end{itemize}
 			During the Log In the system must check that:\begin{itemize}
 				\item All the field are filled with valid data $($The first field must be an email and the second must follow the password validity\askpippo rules$)$.
@@ -115,6 +115,25 @@
 					\centering
 					\includegraphics[width=0.9\textwidth]{"SequenceDiagram/EditBooked"}
 				\end{figure}
+				\newpage
+
+			\paragraph{Accept/Refuse Call}
+				The taxi driver must check answer a request sended by the system, and must notify the end of the ride.
+				Tthe system must:\begin{itemize}
+					\item Check the Locked Ride.
+					\item Push a notification to the first driver in the queue near the location of the ride.
+					\item Check the answer.
+					\item Handle the queue due to the answer given.
+					\item Update the Database.
+				\end{itemize}
+				The system scan every hour the database and get the Locked Ride.
+				The notification is pushed instantly if is and Instant Call or only a small time before the departure time of the Booked Ride\askpippo.
+				\newpage
+				\begin{figure}
+					\centering
+					\includegraphics[width=0.9\textwidth]{"SequenceDiagram/Accept"}
+				\end{figure}
+
 
 \subsection{Component Interfaces}
 

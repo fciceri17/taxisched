@@ -1,7 +1,7 @@
 \section{Introduction}
 
 \subsection{Purpose}
-	This DD is a specification document intended to outline the design choices being made to implement "myTaxiService". This includes a detailed component view, information about 
+	This DD is a specification document intended to outline the design choices being made to implement "myTaxiService". This includes a detailed component view, information about
 	patterns used and stylistic choices, a description of the algorithms to be used and an overview of the UI. These specifications are for the developers that will be writing the code
 	for the service.
 \subsection{Scope}
@@ -20,13 +20,33 @@
 				\item Another database that handles Registered user rides, memorizing both booked rides and past itineraries
 			\end{itemize}
 	\end{description}
+	
 \subsection{Definition, Acronyms and Abbreviations}
+\begin{description}
+	\item[Guest]
+		A guest to the service, namely someone who may be a driver or a registered user but has not been authenticated.
+	\item[Registered User/User]
+		A user of the service who has gone through the registration process, whose information is stored within the service's database.
+	\item[Driver]
+		A user of the service that provides their taxi for the service. They are registered in a manner different from that of other users.
+	\item[Customer]
+		Any person trying to use a taxi through the application, both a registered users and guests.
+	\item[Ride]
+		Generic term to talk about a taxi trip
+	\item[Instant Ride]
+		A ride ordered directly through the application which instantly assigns a taxi to a customer.
+	\item[Reservation/Booked Ride]
+		A ride booked in advance through the application.
+	\item[Ride Locking/Locked Ride]
+		Term used to indicate reservations that have been "locked" from cancellation. A reservation is considered locked when it can no
+		longer be cancelled or modified (2 hours before the start of the trip).
+\end{description}
 
 \subsection{Document Structure}
 	The remainder of the document is divided into the following sections:
 	\begin{enumerate}
 	\item The introduction, which contains basic information on how the service works
-	\item Architectural description, where the components of the service are described, along with the different views, the stylistic choices and the design choices taken. 
+	\item Architectural description, where the components of the service are described, along with the different views, the stylistic choices and the design choices taken.
 	\item Algorithm design, the section where a basic description of the algorithms being used is given.
 	\item UX, the section concerning the UI design choices accompanied by some mockups.
 	\item Requirements traceability, where requirement from the RASD are mapped to the specifications within this document.
