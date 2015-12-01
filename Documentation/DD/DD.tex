@@ -5,11 +5,21 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx} %package to manage images
 \graphicspath{ {../Graphics/} }
- 
+
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}  % @deprecated
 \newcommand{\tabtratt}{~~\thinspace\thinspace{\textendash}~~} % @deprecated
 \newcommand{\askpippo}{~~{\Huge $($?$)$}~~} % Need HELP here
 \newcommand{\finishthis}{~~{\Huge Complete from here\\}~~} % To be continued...from here
+
+
+% Add number to paragraph(like section), isn not linked in table of content
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 
 
 \title{Design Document - myTaxiService}
