@@ -2,16 +2,16 @@
 
 \subsection{Overview}
 	The logical structure of the service is divided in the following manner:
-	\begin{itemize}
-		\item{Client Interface Layer:} Its purpose is to interact with all types of users. This includes both a web interface, reserved for customers, and a mobile application,
+	\begin{description}
+		\item[Client Interface Layer:] Its purpose is to interact with all types of users. This includes both a web interface, reserved for customers, and a mobile application,
 			used by both customers and drivers.
-		\item{Business and Web Layer:} This layer is responsible for the connection of the first layer with the others. It connects users to the information management
+		\item[Business and Web Layer:] This layer is responsible for the connection of the first layer with the others. It connects users to the information management
 			system on the server. This layer operates server-side along with the data management layer. It is also responsible for the management of driver queues and
 			the creation of shared ride orders.
-		\item{Database Management Layer:} This layer is responsible for both user information management as well as reservation storage. Other than saving important and sensitive
+		\item[Database Management Layer:] This layer is responsible for both user information management as well as reservation storage. Other than saving important and sensitive
 			information about the user, it also stores information about the reservations made by users. It communicates with the business layers on a trigger basis when shared rides
 			are to be created.
-	\end{itemize}
+	\end{description}
 \subsection{High Level Components and Their Interaction}
 
 	\begin{figure}[h!]
@@ -136,47 +136,54 @@
 
 
 \subsection{Component Interfaces}
-	\subsection{Intra-component}
-		\subsubsection{Ride Identifier}
-			Methods contained within this interface are used to send data form the Client to the Ride Manager, to enable ride creation, modification and deletion. It is used for both
-			reservations and instant calls. Methods here also allow taxi drivers to interact with rides, by "effectively" modifying the status of the rides.
-		\subsubsection{User Identifier}
-			This interface handles User access to the system. It has methods for both authentication and insertion of user data. All methods in this interface use end-to-end encryption
-			to protect sensitive user data.
-	\subsection{Client}
-		\subsubsection{Driver Access}
-			This interface is used to access driver-only functions which regard the status of rides. It is used to retrieve ride information for the driver and allows a driver to set their working
-			status and accept/refuse jobs.
-		\subsubsection{User Access}
-			This interface is used for authentication and access to the user information database.
-		\subsubsection{Customer Request}
-			This interface gives users the methods to do all things related to rides.
-		\subsubsection{User ID}
-			This interface gives separate methods to taxi driver users and regular customers to login to the service.
-		\subsubsection{UI Access}
-			Methods in this interface are used to render the graphical part of the mobile application.
-	\subsection{Ride Manager}
-		\subsubsection{Ride Creation}
-			This interface handles all incoming requests to edit and create rides.
-		\subsubsection{Ride Accessor}
-			This interface allows the creation and modification of ride objects inside the database. The modified objects have to be saved into the database afterwards.
-		\subsubsection{Driver Management}
-			This interface allow the controller to insert/remove a taxi driver into the queue and allows the controller to retrieve the first available driver in the queue to be assigned to
-			a ride.
-		\subsubsection{Data Modification}
-			This interface is an intermediary between the controller and db accessor. 
-		\subsubsection{DBAccess}
-			This interface handles database access.
-	\subsection{User Data Manager}
-		\subsubsection{Data Editor}
-			This interface takes all incoming requests to the data controller.
-		\subsubsection{Authentication}
-			The methods in this interface let users and drivers log in to the system.
-		\subsubsection{User Data}
-			This interface handles profile editing.
-		\subsubsection{DBAccess}		
-			This interface deals with database access.
-			
+	\subsubsection{Intra-component}
+		\begin{description}
+			\item[Ride Identifier]
+				Methods contained within this interface are used to send data form the Client to the Ride Manager, to enable ride creation, modification and deletion. It is used for both
+				reservations and instant calls. Methods here also allow taxi drivers to interact with rides, by "effectively" modifying the status of the rides.
+			\item[User Identifier]
+				This interface handles User access to the system. It has methods for both authentication and insertion of user data. All methods in this interface use end-to-end encryption
+				to protect sensitive user data.
+		\end{description}
+	\subsubsection{Client}
+		\begin{description}
+			\item[Driver Access]
+				This interface is used to access driver-only functions which regard the status of rides. It is used to retrieve ride information for the driver and allows a driver to set their working
+				status and accept/refuse jobs.
+			\item[User Access]
+				This interface is used for authentication and access to the user information database.
+			\item[Customer Request]
+				This interface gives users the methods to do all things related to rides.
+			\item[User ID]
+				This interface gives separate methods to taxi driver users and regular customers to login to the service.
+			\item[UI Access]
+				Methods in this interface are used to render the graphical part of the mobile application.
+		\end{description}
+	\subsubsection{Ride Manager}
+		\begin{description}
+			\item[Ride Creation]
+				This interface handles all incoming requests to edit and create rides.
+			\item[Ride Accessor]
+				This interface allows the creation and modification of ride objects inside the database. The modified objects have to be saved into the database afterwards.
+			\item[Driver Management]
+				This interface allow the controller to insert/remove a taxi driver into the queue and allows the controller to retrieve the first available driver in the queue to be assigned to
+				a ride.
+			\item[Data Modification]
+				This interface is an intermediary between the controller and db accessor. 
+			\item[DBAccess]
+				This interface handles database access.
+		\end{description}
+	\subsubsection{User Data Manager}
+		\begin{description}
+			\item[Data Editor]
+				This interface takes all incoming requests to the data controller.
+			\item[Authentication]
+				The methods in this interface let users and drivers log in to the system.
+			\item[User Data]
+				This interface handles profile editing.
+			\item[DBAccess]	
+				This interface deals with database access.
+		\end{description}			
 \subsection{Selected Architectural Styles and Patterns}
 
 \subsection{Further Design Choices}
