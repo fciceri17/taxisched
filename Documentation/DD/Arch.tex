@@ -136,13 +136,47 @@
 
 
 \subsection{Component Interfaces}
+	\subsection{Intra-component}
+		\subsubsection{Ride Identifier}
+			Methods contained within this interface are used to send data form the Client to the Ride Manager, to enable ride creation, modification and deletion. It is used for both
+			reservations and instant calls. Methods here also allow taxi drivers to interact with rides, by "effectively" modifying the status of the rides.
+		\subsubsection{User Identifier}
+			This interface handles User access to the system. It has methods for both authentication and insertion of user data. All methods in this interface use end-to-end encryption
+			to protect sensitive user data.
 	\subsection{Client}
-		
+		\subsubsection{Driver Access}
+			This interface is used to access driver-only functions which regard the status of rides. It is used to retrieve ride information for the driver and allows a driver to set their working
+			status and accept/refuse jobs.
+		\subsubsection{User Access}
+			This interface is used for authentication and access to the user information database.
+		\subsubsection{Customer Request}
+			This interface gives users the methods to do all things related to rides.
+		\subsubsection{User ID}
+			This interface gives separate methods to taxi driver users and regular customers to login to the service.
+		\subsubsection{UI Access}
+			Methods in this interface are used to render the graphical part of the mobile application.
 	\subsection{Ride Manager}
-		
+		\subsubsection{Ride Creation}
+			This interface handles all incoming requests to edit and create rides.
+		\subsubsection{Ride Accessor}
+			This interface allows the creation and modification of ride objects inside the database. The modified objects have to be saved into the database afterwards.
+		\subsubsection{Driver Management}
+			This interface allow the controller to insert/remove a taxi driver into the queue and allows the controller to retrieve the first available driver in the queue to be assigned to
+			a ride.
+		\subsubsection{Data Modification}
+			This interface is an intermediary between the controller and db accessor. 
+		\subsubsection{DBAccess}
+			This interface handles database access.
 	\subsection{User Data Manager}
-		
-	
+		\subsubsection{Data Editor}
+			This interface takes all incoming requests to the data controller.
+		\subsubsection{Authentication}
+			The methods in this interface let users and drivers log in to the system.
+		\subsubsection{User Data}
+			This interface handles profile editing.
+		\subsubsection{DBAccess}		
+			This interface deals with database access.
+			
 \subsection{Selected Architectural Styles and Patterns}
 
 \subsection{Further Design Choices}
