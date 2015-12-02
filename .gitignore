@@ -34,3 +34,5 @@
 *.vrb
 *.xdy
 *.tdo
+/Documentation/RASD/RASD.pdf
+/Documentation/DD/DD.pdf
