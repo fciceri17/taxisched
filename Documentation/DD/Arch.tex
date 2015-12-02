@@ -63,7 +63,7 @@
 			\newpage
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.9\textwidth]{"SequenceDiagram/LogIn"}
+				\includegraphics[width=0.85\textwidth]{"SequenceDiagram/LogIn"}
 			\end{figure}
 			\newpage
 
@@ -77,7 +77,7 @@
 			\end{itemize}
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.9\textwidth]{"SequenceDiagram/InstantCall"}
+				\includegraphics[width=0.85\textwidth]{"SequenceDiagram/InstantCall"}
 			\end{figure}
 			\newpage
 
@@ -91,10 +91,10 @@
 				\item If Shared Ride must search for a possible ride to join\askpippo.
 				\item Update the Database.
 			\end{itemize}
-
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.9\textwidth]{"SequenceDiagram/TaxiReservation"}
+				\includegraphics[width=0.85\textwidth]{"SequenceDiagram/TaxiReservation"}
 			\end{figure}
 			\newpage
 
@@ -113,7 +113,7 @@
 				\newpage
 				\begin{figure}[h!]
 					\centering
-					\includegraphics[width=0.9\textwidth]{"SequenceDiagram/EditBooked"}
+					\includegraphics[width=0.85\textwidth]{"SequenceDiagram/EditBooked"}
 				\end{figure}
 				\newpage
 
@@ -129,10 +129,11 @@
 				The system scan every hour the database and get the Locked Ride.
 				The notification is pushed instantly if is and Instant Call or only a small time before the departure time of the Booked Ride\askpippo.
 				\newpage
-				\begin{figure}
+				\begin{figure}[h!]
 					\centering
-					\includegraphics[width=0.9\textwidth]{"SequenceDiagram/Accept"}
+					\includegraphics[width=0.85\textwidth]{"SequenceDiagram/Accept"}
 				\end{figure}
+				\newpage
 
 
 \subsection{Component Interfaces}
@@ -169,7 +170,7 @@
 				This interface allow the controller to insert/remove a taxi driver into the queue and allows the controller to retrieve the first available driver in the queue to be assigned to
 				a ride.
 			\item[Data Modification]
-				This interface is an intermediary between the controller and db accessor. 
+				This interface is an intermediary between the controller and db accessor.
 			\item[DBAccess]
 				This interface handles database access.
 		\end{description}
@@ -181,10 +182,9 @@
 				The methods in this interface let users and drivers log in to the system.
 			\item[User Data]
 				This interface handles profile editing.
-			\item[DBAccess]	
+			\item[DBAccess]
 				This interface deals with database access.
-		\end{description}			
+		\end{description}
 \subsection{Selected Architectural Styles and Patterns}
 
 \subsection{Further Design Choices}
-
