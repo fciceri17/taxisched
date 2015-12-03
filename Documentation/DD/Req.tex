@@ -2,13 +2,13 @@
 	\subsection {Log In, Sign Up and Data Editing}
 
 		\subsubsection{System Registration}
-		The Sign Up function is implemented by the ClientManager. Using the User Access interface, that has the method PARLACOLDB, it comunicates with the UserDataManager and saves the new User's data.
+		The Sign Up function is implemented by the ClientManager. Using the User Access interface, it comunicates with the UserDataManager and saves the new User's data.
 		
 		\subsubsection{User LogIn}
-		The LogIn is performed by the ClientManager that, as in the Sign Up, communicates with the UserDataManager through the User Access Interface. Here the AuthManager verifies the correspondance between the info inserted by the Customer and the ones stored in the DataBase using the DBAccess Interface with the method ÈGIUSTOONO and answers to the ClientManager.
+		The LogIn is performed by the ClientManager that, as in the Sign Up, communicates with the UserDataManager through the User Access Interface. Here the AuthManager verifies the correspondance between the info inserted by the Customer and the ones stored in the DataBase using the DBAccess Interface and answers to the ClientManager.
 		
 		\subsubsection{User edit information}
-		Similarly to the LogIn function the ClientManager communicates with the Data Manager. Here the Profile Editor, through the DBAccess Interface's method CAMBIADATI updates the User's data.
+		Similarly to the LogIn function the ClientManager communicates with the Data Manager. Here the Profile Editor, through the DBAccess Interface updates the User's data.
 		
 		\newpage
 	\subsection {Registered User Requirements}
@@ -21,7 +21,7 @@
 		In this case the Ride Controller behaves the same way as the Instant Calls, with a difference: in case of a Shared Ride it passes the Ride to the Shared Ride Builder that will compose the sharing.
 		
 		\subsubsection{Booking Editing}
-		To modify a Ride's data the Client passes to the Ride Controller the new info. The Controller checks if the modification follows the rules and through the MODIFICARIDE method of the Data Modification Interface writes the new infos in the DataBase.
+		To modify a Ride's data the Client passes to the Ride Controller the new info. The Controller checks if the modification follows the rules and through the Data Modification Interface writes the new infos in the DataBase.
 		
 		
 	\subsection {Taxi Driver Requirements}
