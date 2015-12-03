@@ -12,6 +12,7 @@
 			information about the user, it also stores information about the reservations made by users. It communicates with the Business Layer on a event basis when shared rides
 			are to be created or locked.
 	\end{description}
+\newpage
 \subsection{High Level Components and Their Interaction}
 
 	\begin{figure}[h!]
@@ -48,6 +49,10 @@
 \newpage
 
 \subsection{Runtime View}
+	\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.9\textwidth]{"SequenceDiagram/RTW"}
+	\end{figure}
 	\subsubsection{Sequence Diagram}
 	In this section we show some service provided by our system to better understand how they work.
 			\paragraph{Log In}
@@ -90,10 +95,9 @@
 				\item Check the input given by the user.
 				\item Update the Database.
 			\end{itemize}
-			\newpage
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.85\textwidth]{"SequenceDiagram/TaxiReservation"}
+				\includegraphics[height=0.6\textheight]{"SequenceDiagram/TaxiReservation"}
 			\end{figure}
 			\newpage
 
@@ -157,12 +161,12 @@
 			\item[UI Access]
 				Methods in this interface are used to render the graphical part of the mobile application.
 		\end{description}
+	\newpage
 	\subsubsection{Ride Manager}
 		\begin{description}
 			\item[Ride Creation]
-				This interface handles all incoming requests to edit and create rides.
-			\item[Ride Accessor]
-				This interface allows the creation and modification of ride objects inside the database. The modified objects have to be saved into the database afterwards.
+				This interface handles all incoming requests to edit and create rides. It also gives the the shared ride builder an object that allows it to access the database in order
+				to query for shared rides.
 			\item[Driver Management]
 				This interface allow the controller to insert/remove a taxi driver into the queue and allows the controller to retrieve the first available driver in the queue to be assigned to
 				a ride.
@@ -183,5 +187,11 @@
 				This interface deals with database access.
 		\end{description}
 \subsection{Selected Architectural Styles and Patterns}
-
-\subsection{Further Design Choices}
+	\begin{description}
+		\item[Multi-Tier Architecture:] We separated the system into multiple tiers, since we cannot rely on a solo machine, due both to the client-server nature of the application 
+		\item[Component Based Architecture:] To simplify the implementation of future functionalities, we resort to dividing the system into components,
+		rendering the development process easier to break-down and making extension of the service simpler
+		\item[Event-Driven System:]	The most important part of the service, namely the assignment of taxis to drivers, is entirely event driven. Assignment, queueing and creation of shared rides
+		are all driven by database triggers.
+		\item[Singleton - Queue:] To simplify the access to the queue from the various components we use the singleton pattern to render the queue element unique.
+	\end{description}
