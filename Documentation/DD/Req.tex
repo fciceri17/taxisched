@@ -15,13 +15,13 @@
 	
 		
 		\subsubsection{Instant Calls}
-		This function is implemented by the Ride Controller, that recieved a request from a Client via the Ride Creation Interface, creates a Ride, looks for Taxi Drivers that may accept the jobs and reports it to them. The Controller also communicates with the DataBase to store the Ride's infos. \askpippo
+		This function is implemented by the Ride Controller, that recieves a request from a Client via the Ride Creation Interface, creates a Ride, looks for Taxi Drivers that may accept the jobs and reports it to them. The Controller also communicates with the DataBase to store the Ride's information. 
 		
 		\subsubsection{Booking and Sharing}
-		In this case the Ride Controller behaves the same way as the Instant Calls, with a difference: in case of a Shared Ride it passes the Ride to the Shared Ride Builder that will compose the sharing.
+		In this case the Ride Controller behaves the same way as the Instant Calls, with a difference: when a Ride has to be locked, it's passed to the Shared Ride Builder that looks for other Rides that could match; then it creates a Shared Ride composing the Rides that it found and sends the result to the Ride Manager 
 		
 		\subsubsection{Booking Editing}
-		To modify a Ride's data the Client passes to the Ride Controller the new info. The Controller checks if the modification follows the rules and through the Data Modification Interface writes the new infos in the DataBase.
+		To modify a Ride's data the Client passes to the Ride Controller the new information. The Controller checks if the modification follows the rules and through the Data Modification Interface writes the new infos in the DataBase.
 		
 		
 	\subsection {Taxi Driver Requirements}
@@ -30,7 +30,7 @@
 		The Driver's LogIn works the same way as the Customer's LogIn does.
 		
 		\subsubsection{Driver Work Settings}
-		The Driver, through the UI Access interface, comunicates to the ClientManager the new set of his status. The Manager provides to pass the information to the QueueManager.
+		The Driver, through the UI Access interface, comunicates to the ClientManager the new set of his status. The ClientManager provides the information to the RideManager.
 		
 		\subsubsection{Driver Ride Acceptance and Ending}
-		As in the previous case, the Driver comunicates his decision $($accept, refuse or end a ride$)$ through the UI Interface. \\ This information arrives to the QueueManager through the ClientManager and it will perform the adequate changes to the Driver's position in the queue.
+		As in the previous case, the Driver comunicates his decision $($accept, refuse or end a ride$)$ through the UI Interface. \\ This information arrives to the QueueManager from the ClientManager using the Ride Identifier Interface; then the QueueManager will perform the adequate changes to the Driver's position in the queue.
