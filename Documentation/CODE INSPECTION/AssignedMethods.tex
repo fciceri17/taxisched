@@ -1,0 +1,12 @@
+\section{Assigned Methods}
+
+	\subsection{Methods and their role}
+		\begin{itemize}
+			\item ignoreWebserviceAnnotations(AnnotatedElement annElem,AnnotatedElementHandler annCtignoreWebserviceAnnotationsx): \\ \hfill
+			Verifies if the annotated element has a Stateless and a WebService and if the annotation
+			context is a WebBundleContext or a WebComponentContext. In that case, returns true to ignore the annotation so it doesn't get added twice to the bundle descriptors.
+			\item isJaxwsRIDeployment(AnnotationInfo annInfo): \\ \hfill
+			Verifies that WEB-INF/sun-jaxws.xml exists and it is not processed id EJB context $($if the context is a WebBundleContext or a WebComponentContext$)$. 
+			\item HandlerProcessingResult processAnnotation(AnnotationInfo annInfo): \\ \hfill
+			Processes annotations for javax.jws.WebService annotations and packages all relevant information into the annInfo instance. 
+			\end{itemize}
