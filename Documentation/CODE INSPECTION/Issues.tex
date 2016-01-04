@@ -32,19 +32,35 @@ avoid this:
 
 % this can be done way better by using LISTINGS package
 
-\begin{verbatim}
-    if ( condition )
-        doThis();
-\end{verbatim}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\begin{lstlisting}
+	if ( condition )
+			doThis();
+\end{lstlisting}
 
 instead do this:
 
-\begin{verbatim}
+\begin{lstlisting}
     if ( condition )
     {
         doThis();
     }
-\end{verbatim}
+\end{lstlisting}
 
 \end{enumerate}
 
