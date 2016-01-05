@@ -1,2 +1,17 @@
 \subsection{Java Source Files}
 
+During our analysis two problems arose with the java source files. The first problem was improper implementation. While both classes implemented an abstract class, 	only one of them
+properly overrides the methods. In the WebServiceProviderHandler class, method 1(line 107) and the inner class (line 101)
+\begin{lstlisting}
+	public Class<? extends Annotation>[] 
+	getTypeDependencies()
+\end{lstlisting}
+
+are both missing the @Override flag.
+
+Also, the javadoc is incomplete for a few private methods, method 2 and method 3. While not mandatory, it is incoherent. Firstly, it is only written for one of two methods.
+Furthermore, in the case of method 3, at lines 589-591, the javadoc only semantically explains the behavior of the code. The significance of the parameter and of the return value are not
+explicitly stated. The same thing happens in the WebServiceProviderHandler class, where the same methods exist and are documented in the same manner.
+\\
+Another problem found with the document was the length of method 1. While it is mostly just calls to other methods, in some cases it is a long list checks being done within the code. Each
+one of these if-statement chains could have been moved to a separate method, for clarity and an easier comprehension of the code.

@@ -1,2 +1,6 @@
-\subsection{Naming Conventions}
+\subsection{Class and Interface Declarations}
 
+Classes are correctly done and there are no issues with the declarations barring the notation errors described in the previous subsection. However, there seems to be some duplicate code
+in the WebServiceHandler class and the WebServiceProviderHandler class, where methods are duplicated. While method 1 is different in each file, methods 2 and 3 are exactly the same, and
+as a result should be placed in another class that may be accessed by both.
+Furthermore the order in which methods 2 and 3 are within the 2 analyzed classes is inverted, which seems to be an incoherent choice.
