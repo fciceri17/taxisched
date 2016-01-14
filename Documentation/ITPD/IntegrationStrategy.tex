@@ -1,6 +1,27 @@
 \section{Integration Strategy}
-\subsection{Entry Criteria	}
+\subsection{Entry Criteria}
+We assume that all the functions have been unit tested and that every component is working well. Our aim is to test interactions between each component so we need that every part of our system doesn't have internal problems.
 \subsection{Elements to be Integrated}
+The component we want to test are the ones described in our Design Document, more precisely in the Component View.\newline
+This is the list of the Components with their SubComponents whose interactions need to be tested: \newline
+\newline
+\textbf{Client Components}
+\begin {itemize}
+\item Client Manager
+\end {itemize}
+\textbf{Ride Manager Components}
+\begin{itemize}
+\item Ride Controller
+\item Queue Manager
+\item Shared Ride Builder
+\item Database Manager
+\end {itemize}
+\textbf{Data Manager Components}
+\begin {itemize}
+\item Data Controller
+\item Authentication Manager
+\item Profile Editor
+\end{itemize}
 \subsection{Sequence of Component/Function Integration}
 \subsubsection{Software Integration Sequence}
 \subsubsection{Subsystem Integration Sequence}
