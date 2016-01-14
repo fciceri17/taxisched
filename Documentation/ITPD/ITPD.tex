@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {../Graphics/} }
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}  % @deprecated
+\newcommand{\tabtratt}{~~\thinspace\thinspace{\textendash}~~} % @deprecated
+\newcommand{\askpippo}{~~{\Huge $($?$)$}~~} % Need HELP here
+\newcommand{\finishthis}{~~{\Huge Complete from here\\}~~} % To be continued...from here
+
+
+% Add number to paragraph(like section), isn not linked in table of content
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
+\title{Integration Test Plan Document - myTaxiService}
+\author{
+	Ciceri, Filippo \\
+	\texttt{filippo.ciceri@mail.polimi.it}
+	\and
+	Cesaro, Federico \\
+	\texttt{federico.cesaro@mail.polimi.it}
+	\and
+	Capecchi, Luca \\
+	\texttt{luca.capecchi@mail.polimi.it}
+}
+\date{November 2015}
+
+\pagestyle{headings}
+
+%end preamble
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=8cm]{polimiLogo}\par\vspace{2cm}
+	{\scshape\huge\bfseries Integration Test Plan Document - myTaxiService \par}
+	\vspace{1.5cm}
+	{\scshape\large Ciceri, Filippo \par}
+	{\scshape\normalsize filippo.ciceri@mail.polimi.it \par}
+	\vspace{0.5cm}
+	{\scshape\large Cesaro, Federico \par}
+	{\scshape\normalsize federico.cesaro@mail.polimi.it \par}
+	\vspace{0.5cm}
+	{\scshape\large Capecchi, Luca \par}
+	{\scshape\normalsize luca.capecchi@mail.polimi.it \par}
+	\vspace{0.5cm}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\newpage
+\input{Introduction.tex}
+
+\newpage
+\input{IntegrationStrategy.tex}
+
+\newpage
+\input{IndStepTestDesc.tex}
+
+\newpage
+\input{ToolsTestEquipReq.tex}
+
+\newpage
+\input{ProgStubTestDataReq.tex}
+
+\newpage
+\input{Appendix.tex}
+
+
+\end{document}
