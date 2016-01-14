@@ -1,5 +1,30 @@
 \section{Introduction}
-\subsection{Revision History}
-\subsection{Purpose and Scope}
-\subsection{List of Definitions and Abbreviations}
-\subsection{List of Reference Documents}
+  \subsection{Revision History}
+  \subsection{Purpose and Scope}
+    \subsubsection{Purpose}
+      The pourpose of this document is to guide how to accomplish the integration test of the myTaxiService software.
+      This document will show how the our software should response on a given input, and all the software end strategy needed to test the myTaxiService.
+      The main goal of this document is to simplify the building of the myTaxiService software.
+    \subsubsection{Scope}
+      myTaxiService is a tool used in the city of X in order to simplify taxi usage for customer and driver.
+  \subsection{List of Definitions and Abbreviations}
+    \begin{description}
+    	\item[Guest]
+    		A guest to the service, namely someone who may be a driver or a registered user but has not been authenticated.
+    	\item[Registered User/User]
+    		A user of the service who has gone through the registration process, whose information is stored within the service's database.
+    	\item[Driver]
+    		A user of the service that provides their taxi for the service. They are registered in a manner different from that of other users.
+    	\item[Customer]
+    		Any person trying to use a taxi through the application, both a registered users and guests.
+    	\item[Ride]
+    		Generic term to talk about a taxi trip
+    	\item[Instant Ride]
+    		A ride ordered directly through the application which instantly assigns a taxi to a customer.
+    	\item[Reservation/Booked Ride]
+    		A ride booked in advance through the application.
+    	\item[Ride Locking/Locked Ride]
+    		Term used to indicate reservations that have been "locked" from cancellation. A reservation is considered locked when it can no
+    		longer be cancelled or modified (2 hours before the start of the trip).
+    \end{description}
+  \subsection{List of Reference Documents}
