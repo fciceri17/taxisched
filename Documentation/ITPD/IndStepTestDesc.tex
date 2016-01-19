@@ -1,1 +1,161 @@
 \section{Individual Steps and Test Description}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT1: User Signup\\
+    \hline
+    \textbf{Tested Components} & User Data Manager $\rightarrow$ Database\\
+    \hline
+    \textbf{Input} & Generic and valid sign-up data\\
+    \hline
+    \textbf{Expected Output} & Profile created on database\\
+    \hline
+    \textbf{Environmental Needs} & Server running, request forwarding working, database working\\
+    \hline
+\end{tabular}
+
+\vspace{2em}
+
+\noindent\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT2: Profile data edit\\
+    \hline
+    \textbf{Tested Components} & User Data Manager $\rightarrow$ Database, User Data Manager $\rightarrow$ Client\\
+    \hline
+    \textbf{Input} & New user data\\
+    \hline
+    \textbf{Expected Output} & New profile data overwriting old information\\
+    \hline
+    \textbf{Environmental Needs} & IT1\\
+    \hline
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT3: Client authentication\\
+    \hline
+    \textbf{Tested Components} & Client $\rightarrow$ User Data Manager\\
+    \hline
+    \textbf{Input} & Valid login information\\
+    \hline
+    \textbf{Expected Output} & Client receives login token and correctly instantiates a driver or user class locally\\
+    \hline
+    \textbf{Environmental Needs} & IT1\\
+    \hline
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT4: Instant call insertion\\
+    \hline
+    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller\\
+    \hline
+    \textbf{Input} & An instant taxi request\\
+    \hline
+    \textbf{Expected Output} & Request inserted immediately into queue\\
+    \hline
+    \textbf{Environmental Needs} & Server running, request forwarding\\
+    \hline
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT5: User ride request insertion\\
+    \hline
+    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller\\
+    \hline
+    \textbf{Input} & Generic ride request\\
+    \hline
+    \textbf{Expected Output} & Ride creation server-side\\
+    \hline
+    \textbf{Environmental Needs} & IT3\\
+    \hline
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT6: Ride editing\\
+    \hline
+    \textbf{Tested Components} & Ride Controller $\rightarrow$ Database\\
+    \hline
+    \textbf{Input} & Valid reservation editing request\\
+    \hline
+    \textbf{Expected Output} & Ride information changed in DB\\
+    \hline
+    \textbf{Environmental Needs} & IT5\\
+    \hline
+\end{tabular}
+
+\vspace{2em}
+
+\noindent\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT7: Ride edit blocking\\
+    \hline
+    \textbf{Tested Components} & Ride Controller $\rightarrow$ Database Manager\\
+    \hline
+    \textbf{Input} & Modification request on a locked ride\\
+    \hline
+    \textbf{Expected Output} & Request refused\\
+    \hline
+    \textbf{Environmental Needs} & IT5\\
+    \hline
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT8: Shared Ride creation trigger\\
+    \hline
+    \textbf{Tested Components} & Database $\rightarrow$ Ride Controller\\
+    \hline
+    \textbf{Input} & Shared ride locking trigger\\
+    \hline
+    \textbf{Expected Output} & Shared ride created and inserted in DB\\
+    \hline
+    \textbf{Environmental Needs} & IT5\\
+    \hline
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT9: Driver status change\\
+    \hline
+    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller\\
+    \hline
+    \textbf{Input} & Driver status change Client-side\\
+    \hline
+    \textbf{Expected Output} & Status change Server-side\\
+    \hline
+    \textbf{Environmental Needs} & IT3\\
+    \hline
+\end{tabular}
+
+\vspace{2em}
+
+\noindent\begin{tabular}{l p{0.7\textwidth}}
+    \hline
+    \textbf{Test ID and Name} & IT10: Driver accept\\
+    \hline
+    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller, Ride Controller $\rightarrow$ Database\\
+    \hline
+    \textbf{Input} & Driver "accept" response\\
+    \hline
+    \textbf{Expected Output} & Ride handled with driver data, driver assigned and saved in DB\\
+    \hline
+    \textbf{Environmental Needs} & IT9\\
+    \hline
+\end{tabular}
