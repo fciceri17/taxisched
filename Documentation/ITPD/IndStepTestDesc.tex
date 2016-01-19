@@ -7,7 +7,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT1: User SignUp}\\
     \hline
-    \textbf{Tested Components} & User Data Manager $\rightarrow$ Database\\
+    \textbf{Tested Components} & Data Controller $\rightarrow$ Profile Editor $\rightarrow$ Database\\
     \hline
     \textbf{Input} & Generic and valid sign-up data\\
     \hline
@@ -23,7 +23,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT2: Profile data edit}\\
     \hline
-    \textbf{Tested Components} & User Data Manager $\rightarrow$ Database, User Data Manager $\rightarrow$ Client\\
+    \textbf{Tested Components} & Client Manager $\rightarrow$ Data Controller $\rightarrow$ Profile Editor $\rightarrow$ Database\\
     \hline
     \textbf{Input} & New user data\\
     \hline
@@ -39,7 +39,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT3: Client authentication}\\
     \hline
-    \textbf{Tested Components} & Client $\rightarrow$ User Data Manager\\
+    \textbf{Tested Components} & Client Manager $\rightarrow$ Data Controller $\rightarrow$ Authentication Manager\\
     \hline
     \textbf{Input} & Valid login information\\
     \hline
@@ -55,7 +55,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT4: Instant call insertion}\\
     \hline
-    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller\\
+    \textbf{Tested Components} & Client Manager $\rightarrow$ Ride Controller\\
     \hline
     \textbf{Input} & An instant taxi request\\
     \hline
@@ -71,7 +71,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT5: User ride request insertion}\\
     \hline
-    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller\\
+    \textbf{Tested Components} & Client Manager $\rightarrow$ Ride Controller\\
     \hline
     \textbf{Input} & Generic ride request\\
     \hline
@@ -87,7 +87,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT6: Ride editing}\\
     \hline
-    \textbf{Tested Components} & Ride Controller $\rightarrow$ Database\\
+    \textbf{Tested Components} & Ride Controller $\rightarrow$ Database Manager $\rightarrow$ Database\\
     \hline
     \textbf{Input} & Valid reservation editing request\\
     \hline
@@ -103,7 +103,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT7: Ride edit blocking}\\
     \hline
-    \textbf{Tested Components} & Ride Controller $\rightarrow$ Database Manager\\
+    \textbf{Tested Components} & Ride Controller $\rightarrow$ Database Manager $\rightarrow$ Database\\
     \hline
     \textbf{Input} & Modification request on a locked ride\\
     \hline
@@ -119,7 +119,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT8: Shared Ride creation trigger}\\
     \hline
-    \textbf{Tested Components} & Database $\rightarrow$ Ride Controller\\
+    \textbf{Tested Components} & Database $\rightarrow$ Database Manager $\rightarrow$ Shared Ride Builder $\rightarrow$ Ride Controller\\
     \hline
     \textbf{Input} & Shared ride locking trigger\\
     \hline
@@ -135,7 +135,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT9: Driver status change}\\
     \hline
-    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller\\
+    \textbf{Tested Components} & Client Manager $\rightarrow$ Ride Controller\\
     \hline
     \textbf{Input} & Driver status change Client-side\\
     \hline
@@ -151,7 +151,7 @@
     \hline
     \textbf{Test ID and Name} & \textbf{IT10: Driver accept}\\
     \hline
-    \textbf{Tested Components} & Client $\rightarrow$ Ride Controller, Ride Controller $\rightarrow$ Database\\
+    \textbf{Tested Components} & Client Manager $\rightarrow$ Ride Controller $\rightarrow$ Database Manager $\rightarrow$ Database\\
     \hline
     \textbf{Input} & Driver "accept" response\\
     \hline
