@@ -1,1 +1,15 @@
 \section{Program Stubs and Test Data Required}
+
+In order to perform integration testing prior to the actual deployment, a handful of components have to be simulated, and several objects must be instantiated to perform our test.
+This includes, for example a functioning database, along with created users and drivers. In the following page, we will list what we will need to be created prior to the tests.
+
+\begin{description}
+
+	\item[Database:] we will need a functioning database, with a functioning configuration, mimicking that one of the version that will be deployed. The test data in this database shall include
+	mock users, taxi drivers, and an access interface that enables the creation of rides as well as trigger based notifications.
+	\item[A running server:] this server will handle incoming requests from the mock client, as well as sending ride requests to the database and elaborating shared ride locks to create and
+	complete orders
+	\item[A mock client:] this client will run in order to simulated user requests which are required for all tests involving the client and its sub-components. 
+	\item[A driver instance:] which will be used to test driver functions.
+
+\end{description}
