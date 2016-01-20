@@ -6,10 +6,10 @@ The components we want to test are the ones described in our Design Document, mo
 This is the list of the Components with their SubComponents whose interactions need to be tested: \newline
 \newpage
 
-\noindentation\textbf{Client Components}
-\begin {itemize}
+\noindent\textbf{Client Components}
+\begin{itemize}
 \item Client Manager
-\end {itemize}
+\end{itemize}
 \textbf{Ride Manager Components}
 \begin{itemize}
 \item Ride Controller
@@ -34,5 +34,7 @@ We decided to use the bottom-up approach. We thought this was the best strategy 
 Before testing the top level we need to be sure that lower levels work in order to understand where hypothetical problems or issues may arise.
 
 \subsection{Sequence of Component/Function Integration}
-\subsubsection{Software Integration Sequence}
-\subsubsection{Subsystem Integration Sequence}
+Test will have to be performed sequentially to verify the complete functionality of the system.
+As a result, we will follow the sequence illustrated in Section 2.2. First of all, we will test the User Management functions, like login and signup. Once those have been
+attained, we will look into the client's request forwarding and proper client-server authentication. We will test whether ride requests are properly stored and elaborated. 
+Once we have verified that, we will see whether customer requests will be elaborated completely, and then verify if the interaction with taxi drivers is fully functional.
