@@ -1,1 +1,121 @@
 \section{Function Points and COCOMO}
+
+\subsection{Function Points}
+	\subsubsection{ILF - Internal Logic Files}
+		The ILFs of our system will be the following:
+		\begin{itemize}
+			\item Guest
+			\item User
+			\item Taxi Driver
+			\item Ride
+		\end{itemize}
+	\subsubsection{ELF - External Logic Files}
+		The ELFs of our system will be the following:
+		\begin{itemize}
+			\item External Maps
+		\end{itemize}
+	\subsubsection{EI - External Input}
+		The EIs of our system will be the following:
+		\begin{itemize}
+			\item Signup
+			\item Login/Logout
+			\item User Information Modification
+			\item Ride Booking
+			\item Ride Modification/Cancellation
+			\item Driver Status Modification
+		\end{itemize}
+	\subsubsection{EQ - External Enquiry}
+		The EQs of our system will be the following:
+		\begin{itemize}
+			\item Ride History
+			\item Ride Information
+			\item User Information
+			\item Driver Request Response
+		\end{itemize}
+	\subsubsection{EO - External Outputs}
+		The EQs of our system will be the following:
+		\begin{itemize}
+			\item Ride History Creation
+			\item Shared Ride
+			\item User Notification
+		\end{itemize}
+		
+	\subsubsection{Complexity Estimation}
+		\begin{tabular}{|p{4cm}|p{9cm}|}
+			\hline
+			\textbf{ILF} & \textbf{Complexity}\\
+			\hline
+			\textbf{Guest} & Simple \\
+			\hline
+			\textbf{User} & Medium \\
+			\hline
+			\textbf{Taxi Driver} & Medium \\
+			\hline
+			\textbf{Ride} & High \\
+			\hline
+		\end{tabular}
+		
+		\vspace{2em}
+
+		\noindent\begin{tabular}{|p{4cm}|p{9cm}|}
+			\hline
+			\textbf{ELF} & \textbf{Complexity}\\
+			\hline
+			\textbf{External Maps} & High \\
+			\hline
+		\end{tabular}
+		
+		\vspace{2em}
+		
+		\noindent\begin{tabular}{|p{4cm}|p{9cm}|}
+			\hline
+			\textbf{EI} & \textbf{Complexity}\\
+			\hline
+			\textbf{Signup} & Medium \\
+			\hline
+			\textbf{Login} & Simple \\
+			\hline
+			\textbf{Logout} & Simple \\
+			\hline
+			\textbf{User Information Modification} & Medium \\
+			\hline
+			\textbf{Ride Booking} & Medium \\
+			\hline
+			\textbf{Ride Modification} & Medium \\
+			\hline
+			\textbf{Ride Cancellation} & Simple \\
+			\hline
+			\textbf{Driver Status Modification} & Simple \\
+			\hline
+		\end{tabular}
+		
+		\vspace{2em}
+		
+		\noindent\begin{tabular}{|p{4cm}|p{9cm}|}
+			\hline
+			\textbf{EQ} & \textbf{Complexity}\\
+			\hline
+			\textbf{Ride History} & Simple \\
+			\hline
+			\textbf{Ride Information} & Simple \\
+			\hline
+			\textbf{User Information} & Simple \\
+			\hline
+			\textbf{Driver Request Response} & Simple \\
+			\hline
+		\end{tabular}
+		
+		\vspace{2em}
+		
+		\noindent\begin{tabular}{|p{4cm}|p{9cm}|}
+			\hline
+			\textbf{EO} & \textbf{Complexity}\\
+			\hline
+			\textbf{Ride History Creation} & High \\
+			\hline
+			\textbf{Shared Ride} & High \\
+			\hline
+			\textbf{User Notification} & Simple \\
+			\hline
+		\end{tabular}
+		\vspace{2em}
