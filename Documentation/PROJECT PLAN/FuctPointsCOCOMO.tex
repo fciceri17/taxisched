@@ -169,25 +169,65 @@ So we have:\\
 
 	\vspace{2em}
 	
+	
+\newpage	
 \subsection{COCOMO}
+
+To calculate the Effort of our project, we will use COCOMO II model. \\
+The formula that calculates the Effort is:\\
+\begin{center}
+Effort $= A \times EAF \times KSLOC^E$\\
+\end{center}
+Where: 
+\begin{itemize}
+\item EAF = $\begin{matrix} \prod_{i} C_i \end{matrix}$ with $C_i$ a single Cost Driver\\
+\item E = $ 0.91 + 0.01 \times \begin{matrix} \prod_{i} SF_i \end{matrix}$ with $SF_i$ a single Scale Driver\\
+\item KSLOC = Kilo Source Lines of Code\\
+\item A = 2.94\\
+\end{itemize}
+So now we need to analize the Scale Drivers and the Cost Drivers.\\
+
+\subsubsection{Scale Drivers}
+Scale Drivers are parameters that non-linearly influence the effort, in relation to the Lines of Code.\\
+There are five types of these parameters, each one can go to \texttt{Very low} to \texttt{Extra high}:\\
+\begin{itemize}
+\item{\textbf{Precedentedness:}} this parameter reflects the previous experience on this type of project of the people that are working on it. \texttt{Very low} means no experience at all, \texttt{Extra high} means complete familiarity.
+	In our project this parameter is \texttt{Low} because we have some experience in project desing but most of these issues are new to us.\\
+\item{\textbf{Development flexibility:}} explains the level of flexibility in the development process. \texttt{Very low} means that the developer has been given rigorous requests and clear goals, \texttt{Extra high} means that were given only generic goals.
+	We set it to \texttt{Nominal} because we were in a medium \askpippo situation, where we had clear goals but we could interpretate them with a certain degree of freedom.\\
+\item{\textbf{Risk resolution:}}
+\item{\textbf{Team Cohesion:}} it obviously identifies the cohesion of the team members. In our case we set it to \texttt{High} since we know each other quite well but it's the first time we work together in a group of three people.\\
+\item{\textbf{:}} Reflects the process maturity of the organisation. The computation of this value depends on the CMM Maturity Questionnaire but we estimated it at \texttt{High} that corresponds to CMM Level 3.\\
+\end{itemize}
+
+
+
 
 	\begin{tabular}{|l|l|l|l|}
 	\hline
 	\textbf{Code} & \textbf{Name} & \textbf{Factor} & \textbf{Value}\\
 	\hline
-	PREC & Precedentedness & &\\
+	PREC & Precedentedness & Low & 4.96\\
 	\hline
-	FLEX & Development flexibility & &\\
+	FLEX & Development flexibility & Nominal & 3.04\\
 	\hline
-	RESL & Risk resolution & & \\
+	RESL & Risk resolution &  & \\
 	\hline
-	TEAM & Team cohesion & & \\
+	TEAM & Team cohesion & High & 2.19\\
 	\hline
-	PMAT & Process maturity & & \\
+	PMAT & Process maturity & High & 3.12\\
 	\hline
+	\textbf{Total} & \multicolumn{2}{|c|}{E = $ 0.91 + 0.01 \times \begin{matrix} \prod_{i} SF_i \end{matrix}$} & \\
+	\hline	
 	\end{tabular}
 	
 	\vspace{2em}
+
+\subsubsection{Cost Drivers}
+
+COCOMO II has 17 Cost Drivers that are multiplicative factors that reflect some characteristics of the developing process. 
+The range of the values is the same as the Scale Drivers.
+The table below shows our project's values for the Cost Drivers.\\ 
 	
 	\begin{tabular}{|l|l|l|l|}
 	\hline
@@ -227,6 +267,18 @@ So we have:\\
 	\hline
 	SCED & Required Development Schedule & &\\
 	\hline
-	
+	\textbf{Total} & \multicolumn{2}{|c|}{EAF = $\begin{matrix} \prod_{i} C_i \end{matrix}$} & \\
+	\hline
 	\end{tabular}
+	
+\subsubsection{Duration}
+	The Duration of our project is given by this equation:\\
+	\begin{center}
+	
+	Duration = $ 3.67 \times  ($Effort$)^{0.28 + 0.2 \times (E-0.91)} $ \\
+	
+	\end{center}
+	
+	Where the variables are the same as in the Effort Equation.\\
+	
 	
