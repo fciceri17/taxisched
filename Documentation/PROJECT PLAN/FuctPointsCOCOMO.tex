@@ -194,10 +194,10 @@ There are five types of these parameters, each one can go to \texttt{Very low} t
 \item{\textbf{Precedentedness:}} this parameter reflects the previous experience on this type of project of the people that are working on it. \texttt{Very low} means no experience at all, \texttt{Extra high} means complete familiarity.
 	In our project this parameter is \texttt{Low} because we have some experience in project desing but most of these issues are new to us.\\
 \item{\textbf{Development flexibility:}} explains the level of flexibility in the development process. \texttt{Very low} means that the developer has been given rigorous requests and clear goals, \texttt{Extra high} means that were given only generic goals.
-	We set it to \texttt{Nominal} because we were in a medium \askpippo situation, where we had clear goals but we could interpretate them with a certain degree of freedom.\\
-\item{\textbf{Risk resolution:}}
+	We set it to \texttt{Nominal} because we were in a not too strict situation, where we had clear goals but we could interpret them with a certain degree of freedom.\\
+\item{\textbf{Risk resolution:}} evaluates the risk assessment. We set it to \texttt{Nominal}, since our risk analysis is not too extensive.
 \item{\textbf{Team Cohesion:}} it obviously identifies the cohesion of the team members. In our case we set it to \texttt{High} since we know each other quite well but it's the first time we work together in a group of three people.\\
-\item{\textbf{:}} Reflects the process maturity of the organisation. The computation of this value depends on the CMM Maturity Questionnaire but we estimated it at \texttt{High} that corresponds to CMM Level 3.\\
+\item{\textbf{Process Maturity:}} Reflects the process maturity of the organisation. The computation of this value depends on the CMM Maturity Questionnaire but we estimated it at \texttt{High} that corresponds to CMM Level 3.\\
 \end{itemize}
 
 
@@ -211,13 +211,13 @@ There are five types of these parameters, each one can go to \texttt{Very low} t
 	\hline
 	FLEX & Development flexibility & Nominal & 3.04\\
 	\hline
-	RESL & Risk resolution &  & \\
+	RESL & Risk resolution & Nominal & 4.24\\
 	\hline
 	TEAM & Team cohesion & High & 2.19\\
 	\hline
 	PMAT & Process maturity & High & 3.12\\
 	\hline
-	\textbf{Total} & \multicolumn{2}{|c|}{E = $ 0.91 + 0.01 \times \begin{matrix} \prod_{i} SF_i \end{matrix}$} & \\
+	\textbf{Total} & \multicolumn{2}{|c|}{E = $ 0.91 + 0.01 \times \begin{matrix} \prod_{i} SF_i \end{matrix}$} & 1.09\\
 	\hline	
 	\end{tabular}
 	
@@ -233,43 +233,47 @@ The table below shows our project's values for the Cost Drivers.\\
 	\hline
 	\textbf{Code} & \textbf{Name} & \textbf{Factor} & \textbf{Value}\\
 	\hline
-	RELY & Required Software Reliability & &\\
+	RELY & Required Software Reliability			& High 	&		1.10\\
 	\hline
-	DATA & Data base size & &\\
+	DATA & Data base size 							& Nominal &		1.00\\
 	\hline
-	CPLX & Product Complexity & & \\
+	CPLX & Product Complexity 						& Nominal &		1.00\\
 	\hline
-	RUSE& Required Reusability & & \\
+	RUSE& Required Reusability 						& High &		1.07\\
 	\hline
-	DOCU & Documentation match to life-cycle needs & & \\
+	DOCU & Documentation match to life-cycle needs 	& Low & 		0.91\\
 	\hline
-	TIME & Execution Time Constraint & &\\
+	TIME & Execution Time Constraint 				& Very High &	1.29\\
 	\hline
-	STOR & Main Storage Constraint & &\\
+	STOR & Main Storage Constraint 					& Nominal &		1.00\\
 	\hline
-	PVOL & Platform Volatility & & \\
+	PVOL & Platform Volatility 						& Low & 		0.87\\
 	\hline
-	ACAP & Analyst Capability & & \\
+	ACAP & Analyst Capability 						& Nominal & 	1.00\\
 	\hline
-	PCAP & Programmer Capability & & \\
+	PCAP & Programmer Capability 					& Nominal &		1.00\\
 	\hline
-	APEX & Application Experience & &\\
+	APEX & Application Experience 					& Very Low &	1.22\\
 	\hline
-	PLEX & Platform Experience & &\\
+	PLEX & Platform Experience 						& Nominal &		1.00\\
 	\hline
-	LTEX & Language and Tool Experience & & \\
+	LTEX & Language and Tool Experience 			& Low & 		1.09\\
 	\hline
-	PCON & Personnel Continuity & & \\
+	PCON & Personnel Continuity 					& High & 		0.90\\
 	\hline
-	TOOL & Usage of Software Tool & & \\
+	TOOL & Usage of Software Tools 					& Nominal &		1.00\\
 	\hline
-	SITE & Multisite Development & &\\
+	SITE & Multisite Development 					& High &		0.93\\
 	\hline
-	SCED & Required Development Schedule & &\\
+	SCED & Required Development Schedule 			& High &		1.00\\
 	\hline
-	\textbf{Total} & \multicolumn{2}{|c|}{EAF = $\begin{matrix} \prod_{i} C_i \end{matrix}$} & \\
+	\textbf{Total} & \multicolumn{2}{|c|}{EAF = $\begin{matrix} \prod_{i} C_i \end{matrix}$} & 1.34 \\
 	\hline
 	\end{tabular}
+	
+	
+\subsubsection{Effort Estimate}
+	Our effort estimate amounts to \textbf{26.1 person-months}.  
 	
 \subsubsection{Duration}
 	The Duration of our project is given by this equation:\\
@@ -280,5 +284,7 @@ The table below shows our project's values for the Cost Drivers.\\
 	\end{center}
 	
 	Where the variables are the same as in the Effort Equation.\\
+	The estimate of the duration of the project amounts to \textbf{10.2 months}. This estimate gives us a team size of 2.56 people.
+	With these numbers in mind, we can expect a 10 months time frame to be a generous estimate, due to our team size being 3.
 	
 	

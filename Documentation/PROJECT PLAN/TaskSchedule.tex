@@ -1,13 +1,55 @@
 \section{Task Schedule}
-The task that we have to complete for this project can be divided in two kinds:
+The tasks that we have to complete for this project can be divided in:
 \begin{enumerate}
 \item Deliver the main documents concerning the project such as:
 	\begin{itemize}
 		\item The \textit{Requirement Analysis and Specification Document} $($RASD$)$ containing the domain assumptions, the goals and the requirements of our project.
 		\item The \textit{Design Document} $($DD$)$ that contains the explanation of the architecture of our system.
-		\item The \textit{Itegration Testing Plan Document} containing the plan of integration testing on our system.
+		\item The \textit{Integration Testing Plan Document} containing the plan of integration testing on our system.
 		\item This \textit{Project Plan}
 	\end{itemize}
 \item A short presentation about the previous documents
-\item Implement
+\item Implement the following parts of the service:
+	\begin{itemize}
+		\item The application front-end for both mobile and web platforms.
+		\item The ride management system.
+		\item The ride reservation system.
+		\item The user management system.
+	\end{itemize}
+\item Unit and Integration testing, which can be done iteratively as each part of the service is developed, and can be actively used as development feedback before release.
 \end{enumerate}
+
+The tasks to be performed do not require a strict order, especially with regards to the development of the software. However, we did generate a dependecy graph to show what parts have
+to be completed before work can be started on other parts. The dependency graph is pictured below.
+
+
+
+%GRAPH
+
+
+Due to the nature of our project, there are several fixed deadlines with regards to the delivery of most documents. However, the development and testing cycle has no set deadlines 
+yet, since it is too early in the development cycle to assess the amount of time necessary to develop each part of the software.
+
+\begin{table}
+    \centering
+    \begin{tabular}{| l | l | l |}
+        \hline
+        \textbf{Activity}   & \textbf{Start Date}   & \textbf{Deadline} \\
+		\hline
+        Project Plan				& 29/09/2015		& 14/10/2015\\
+        \hline
+        RASD						& 15/10/2015		& 06/11/2015\\
+		\hline
+        DD							& 07/11/2015		& 04/12/2015\\
+		\hline
+        ITPD						& 10/12/2015		& 05/01/2016\\
+		\hline
+		Implementation and Testing	& 08/01/2016		& 29/07/2016\\
+        \hline
+        Presentation				& 10/02/2015		& 15/02/2015\\
+		\hline
+        
+    \end{tabular}
+    \caption{Schedule for project tasks.}
+    \label{tab:schedule}
+\end{table}
